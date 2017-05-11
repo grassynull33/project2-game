@@ -1,0 +1,28 @@
+{
+  "name": "project2",
+  "version": "1.0.0",
+  "description": "Project #2",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yoonslee/project2-game.git"
+  },
+  "author": "Team BNYY",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/yoonslee/project2-game/issues"
+  },
+  "homepage": "https://github.com/yoonslee/project2-game#readme",
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "express": "^4.15.2",
+    "express-handlebars": "^3.0.0",
+    "mysql": "^2.13.0",
+    "passport": "^0.3.2",
+    "sequelize": "^3.30.4"
+  }
+}
