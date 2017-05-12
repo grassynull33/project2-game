@@ -18,7 +18,10 @@ var app            = express();
 app.use(methodOverride('_method'));
 
 //allow sessions
-app.use(session({ secret: 'booty Mctootie', cookie: { maxAge: 60000 }}));
+app.use(session({ secret: 'booty Mctootie', cookie: { maxAge: 60000 }, 
+	resave: false,
+	saveUninitialized: true,
+}));
 app.use(cookieParser());
 
 // view engine setup
