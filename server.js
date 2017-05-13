@@ -17,12 +17,12 @@ var app            = express();
 // override POST to have DELETE and PUT
 app.use(methodOverride('_method'));
 
-//allow sessions
-app.use(session({ secret: 'booty Mctootie', cookie: { maxAge: 60000 }, 
-	resave: false,
-	saveUninitialized: true,
-}));
-app.use(cookieParser());
+// //allow sessions
+// app.use(session({ secret: 'booty Mctootie', cookie: { maxAge: 60000 }, 
+// 	resave: false,
+// 	saveUninitialized: true,
+// }));
+// app.use(cookieParser());
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
