@@ -1,9 +1,25 @@
+
 <body>
 {{> login-modal }}
 		<!-- Header -->
 			<div id="header" class="skel-layers-fixed">
 
 				<div class="top">
+					<div class="container-fluid" id="login_container">
+					    <div class="row" id="background">
+					       <div class="col-md-12" id="login_header">
+								<p>
+									{{#if logged_in}}
+										<div>
+											<p>Welcome {{email}}! </p>
+											<p>You are user {{username}}.</p>
+											{{!-- <a href="/characters"><button id="choose_character">Choose your Character!</button></a> --}}
+										</div>
+									{{/if}}
+								</p>
+							</div>
+						</div>        
+					</div>
 
 					<!-- Logo -->
 						<div id="logo">
@@ -26,7 +42,7 @@
 						</nav>
 						
 				</div>
-				
+
 				<div class="bottom">
 
 					<!-- Social Icons -->
