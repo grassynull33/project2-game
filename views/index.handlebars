@@ -3,29 +3,11 @@
 {{> login-modal }}
 		<!-- Header -->
 			<div id="header" class="skel-layers-fixed">
-
-				<div class="top">
-					<div class="container-fluid" id="login_container">
-					    <div class="row" id="background">
-					       <div class="col-md-12" id="login_header">
-								<p>
-									{{#if logged_in}}
-										<div>
-											<p>Welcome {{email}}! </p>
-											<p>You are user {{username}}.</p>
-											<a href="/characters"><button id="choose_character">Choose your Character!</button></a>
-										</div>
-									{{/if}}
-								</p>
-							</div>
-						</div>        
-					</div>
-
 					<!-- Logo -->
 						<div id="logo">
 							<span class="image avatar48"><img src="/assets/images/avatar.jpg" alt="" /></span>
-							<h1 id="title">Jane Doe</h1>
-							<p>Hyperspace Engineer</p>
+							<h1 id="title">Welcome {{email}}</h1>
+							<p>You are user {{username}}</p>
 						</div>
 
 					<!-- Nav -->
