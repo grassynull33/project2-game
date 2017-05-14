@@ -1,1 +1,202 @@
-<h1>Hi</h1>
+<body>
+{{> login-modal }}
+		<!-- Header -->
+			<div id="header" class="skel-layers-fixed">
+					<!-- Logo -->
+						<div id="logo">
+							<span class="image avatar48"><img src="/assets/images/avatar.jpg" alt="" /></span>
+							<h1 id="title">Welcome {{email}}</h1>
+							<p>You are user {{username}}</p>
+						</div>
+
+					<!-- Nav -->
+						<nav id="nav">
+							<ul>
+								<li><a href="#top" id="top-link" class="skel-layers-ignoreHref"><span class="icon fa-home">Intro</span></a></li>
+								<li><a href="#items" id="items-link" class="skel-layers-ignoreHref"><span class="icon fa-th">Items</span></a></li>
+								<li><a href="#about" id="about-link" class="skel-layers-ignoreHref"><span class="icon fa-user">Status</span></a></li>
+								<li><a href="#contact" id="contact-link" class="skel-layers-ignoreHref"><span class="icon fa-envelope">Contact</span></a></li>
+								<li>
+			                    <a href="page-scroll" class="skel-layers-ignoreHref" data-toggle="modal" data-target="#login-modal">Login</a>
+			                </li>
+							</ul>
+						</nav>
+						
+				</div>
+
+				<div class="bottom">
+
+					<!-- Social Icons -->
+						<ul class="icons">
+							<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+							<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+							<li><a href="#" class="icon fa-github"><span class="label">Github</span></a></li>
+							<li><a href="#" class="icon fa-dribbble"><span class="label">Dribbble</span></a></li>
+							<li><a href="#" class="icon fa-envelope"><span class="label">Email</span></a></li>
+						</ul>
+				
+				</div>
+			
+			</div>
+
+		<!-- Main -->
+			<div id="main">
+
+				<!-- Intro -->
+					<section id="top" class="one dark cover">
+						<div class="container">
+
+							<header>
+								<h2 class="alt"></h2>
+								<p>Ligula scelerisque justo sem accumsan diam quis<br />
+								vitae natoque dictum sollicitudin elementum.</p>
+							</header>
+							
+							<footer>
+								<a href="#items" class="button scrolly">Magna Aliquam</a>
+							</footer>
+
+						</div>
+					</section>
+					
+				<!-- Item Check List -->
+					<section id="items" class="two">
+						<div class="container">
+					
+							<header>
+								<h2>Items Check List</h2>
+							</header>
+
+							<div class="container">
+							    <br />
+								<div class="row">
+
+							        <div class="dual-list list-left col-md-5">
+							            <div class="well text-right">
+							                <div class="row">
+							                    <div class="col-md-10">
+							                        <div class="input-group">
+							                            <span class="input-group-addon glyphicon glyphicon-search"></span>
+							                            <input type="text" name="SearchDualList" class="form-control" placeholder="search" />
+							                        </div>
+							                    </div>
+							                    <div class="col-md-2">
+							                        <div class="btn-groupleft">
+							                            <a class="btn btn-default selector" title="select all"><i class="glyphicon glyphicon-unchecked"></i></a>
+							                        </div>
+							                    </div>
+							                </div>
+							                <ul class="list-group">
+							                    <li class="list-group-item">bootstrap-duallist <!-- <a href="https://github.com/bbilginn/bootstrap-duallist" target="_blank">github</a> --></li>
+							                    <li class="list-group-item">Dapibus ac facilisis in</li>
+							                    <li class="list-group-item">Morbi leo risus</li>
+							                    <li class="list-group-item">Porta ac consectetur ac</li>
+							                    <li class="list-group-item">Vestibulum at eros</li>
+							                </ul>
+							            </div>
+							        </div>
+
+							        <div class="list-arrows col-md-1 text-center">
+							            <button class="btn btn-default btn-sm move-left">
+							                <span class="glyphicon glyphicon-chevron-left"></span>
+							            </button>
+
+							            <button class="btn btn-default btn-sm move-right">
+							                <span class="glyphicon glyphicon-chevron-right"></span>
+							            </button>
+							        </div>
+
+							        <div class="dual-list list-right col-md-5">
+							            <div class="well">
+							                <div class="row">
+							                    <div class="col-md-2">
+							                        <div class="btn-groupright">
+							                            <a class="btn btn-default selector" title="select all"><i class="glyphicon glyphicon-unchecked"></i></a>
+							                        </div>
+							                    </div>
+							                    <div class="col-md-10">
+							                        <div class="input-group">
+							                            <input type="text" name="SearchDualList" class="form-control" placeholder="search" />
+							                            <span class="input-group-addon glyphicon glyphicon-search"></span>
+							                        </div>
+							                    </div>
+							                </div>
+							                <ul class="list-group">
+							                    <li class="list-group-item">Cras justo odio</li>
+							                    <li class="list-group-item">Dapibus ac facilisis in</li>
+							                    <li class="list-group-item">Morbi leo risus</li>
+							                    <li class="list-group-item">Porta ac consectetur ac</li>
+							                    <li class="list-group-item">Vestibulum at eros</li>
+							                </ul>
+							            </div>
+							        </div>
+
+								</div>
+							</div>
+						</div>
+					</section>
+
+				<!-- About Me -->
+					<section id="about" class="three">
+						<div class="container">
+
+							<header>
+								<h2>Player Status</h2>
+							</header>
+
+							<a href="#" class="image featured"><img src="/assets/images/pic08.jpg" alt="" /></a>
+							
+							<p>Tincidunt eu elit diam magnis pretium accumsan etiam id urna. Ridiculus 
+							ultricies curae quis et rhoncus velit. Lobortis elementum aliquet nec vitae 
+							laoreet eget cubilia quam non etiam odio tincidunt montes. Elementum sem 
+							parturient nulla quam placerat viverra mauris non cum elit tempus ullamcorper 
+							dolor. Libero rutrum ut lacinia donec curae mus vel quisque sociis nec 
+							ornare iaculis.</p>
+
+						</div>
+					</section>
+			
+				<!-- Contact -->
+					<section id="contact" class="four">
+						<div class="container">
+
+							<header>
+								<h2>Contact</h2>
+							</header>
+
+							{{!-- <p>Elementum sem parturient nulla quam placerat viverra 
+							mauris non cum elit tempus ullamcorper dolor. Libero rutrum ut lacinia 
+							donec curae mus. Eleifend id porttitor ac ultricies lobortis sem nunc 
+							orci ridiculus faucibus a consectetur. Porttitor curae mauris urna mi dolor.</p> --}}
+							
+							<form method="post" action="#">
+								<div class="row 50%">
+									<div class="6u"><input type="text" name="name" placeholder="Name" /></div>
+									<div class="6u"><input type="text" name="email" placeholder="Email" /></div>
+								</div>
+								<div class="row 50%">
+									<div class="12u">
+										<textarea name="message" placeholder="Message"></textarea>
+									</div>
+								</div>
+								<div class="row">
+									<div class="12u">
+										<input type="submit" value="Send Message" />
+									</div>
+								</div>
+							</form>
+
+						</div>
+					</section>
+			
+			</div>
+
+		<!-- Footer -->
+			<div id="footer">
+				
+				<!-- Copyright -->
+					<ul class="copyright">
+						<li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+					</ul>
+				
+			</div>
