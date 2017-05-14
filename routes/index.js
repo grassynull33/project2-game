@@ -1,9 +1,16 @@
+
 var firebase = require('firebase-admin');
 var models = require('../models');
 var express = require('express');
 var router = express.Router();
 
+var db = require('../models');
+
+var Sequelize = require('sequelize');
+var sequelize = new Sequelize('project2', 'root', 'Passw0rd');
+
 // Firebase testing
+var uniqueID = [];
 var name = [];
 var slotID = [];
 var description = [];
@@ -24,14 +31,15 @@ router.get('/', function (req, res) {
 });
 
 router.get('/firebase', function (req, res) {
-  var db = firebase.database();
-  var ref = db.ref('Testing');
+  var fireDB = firebase.database();
+  var ref = fireDB.ref('Testing');
 
-  var nameRef = db.ref('Testing/name');
-  var slotIDRef = db.ref('Testing/slotID');
-  var descriptionRef = db.ref('Testing/description');
-  var moreThanOneRef = db.ref('Testing/More than One in Inventory');
+  var nameRef = fireDB.ref('Testing/name');
+  var slotIDRef = fireDB.ref('Testing/slotID');
+  var descriptionRef = fireDB.ref('Testing/description');
+  var moreThanOneRef = fireDB.ref('Testing/More than One in Inventory');
 
+  // detects items already in firebase
   ref.on('child_added', function (snapshot) {
     // console.log(snapshot.key, snapshot.val());
     // counter++;
@@ -41,6 +49,7 @@ router.get('/firebase', function (req, res) {
     if (snapshot.key === 'name') {
       for (var key in snapshot.val()) {
         name.push(snapshot.val()[key]);
+        uniqueID.push(key);
       }
     } else if (snapshot.key === 'description') {
       for (var key in snapshot.val()) {
@@ -66,9 +75,58 @@ router.get('/firebase', function (req, res) {
     // console.log(moreThanOne);
     if (name.length > 0 && description.length > 0 && slotID.length > 0 && moreThanOne.length > 0) {
       for (var i = 0; i < name.length; i++) {
-        console.log('Item Name: ' + name[i] + ' | Description: ' + description[i] + ' | slotID: ' + slotID[i] + ' | moreThanOne: ' + moreThanOne[i]);
+        console.log((i + 1) + '. Item Name: ' + name[i] + ' | Description: ' + description[i] + ' | slotID: ' + slotID[i] + ' | moreThanOne: ' + moreThanOne[i] + ' | uID: ' + uniqueID[i]);
+
+        db.Item.create({
+          name: name[i],
+          description: description[i],
+          slotID: slotID[i],
+          moreThanOne: moreThanOne[i],
+          uniqueID: uniqueID[i]
+        });
+          // .then(function () {
+          //   res.send({redirect: '/'});
+          // }).catch(function (err) {
+          //   res.json(err);
+          // });
+
+        // db.Item.findAll({
+        //   where: {uniqueID: uniqueID[i]}
+        // }).then(function (items) {
+        //   if (items.length > 0) {
+        //     console.log('duplicate found');
+        //   } else {
+
+        //   }
+        // });
       }
     }
+  });
+
+  // update w newly added items
+  ref.on('child_changed', function (snapshot) {
+    console.log(snapshot.key);
+    console.log(snapshot.val());
+
+    // TODO need to figure out how to get last item in returned child obj
+    // if (snapshot.key === 'name') {
+    //   for (var key in snapshot.val()) {
+    //     name.push(snapshot.val()[key]);
+    //     uniqueID.push(key);
+    //   }
+    // } else if (snapshot.key === 'description') {
+    //   for (var key in snapshot.val()) {
+    //     description.push(snapshot.val()[key]);
+    //   }
+    // } else if (snapshot.key === 'slotID') {
+    //   for (var key in snapshot.val()) {
+    //     slotID.push(snapshot.val()[key]);
+    //   }
+    // } else if (snapshot.key === 'More than One in Inventory') {
+    //   for (var key in snapshot.val()) {
+    //     moreThanOne.push(snapshot.val()[key]);
+    //   }
+    // }
   });
 
   // nameRef.on('child_added', function (snapshot) {

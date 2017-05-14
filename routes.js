@@ -1,11 +1,12 @@
-module.exports = function(app){
+module.exports = function (app) {
+    // Our model controllers (rather than routes)
+  var index = require('./routes/index');
+  var userController = require('./controllers/userController');
+  var itemController = require('./controllers/itemController');
 
-		// Our model controllers (rather than routes)
-		var index = require('./routes/index');
-		var userController = require('./controllers/userController');
+  app.use('/', index);
+  app.use('/users', userController);
+  app.use('/firebase', itemController);
 
-		app.use('/', index);
-		app.use('/users', userController);
-
-    //other routes..
-}
+    // other routes..
+};
