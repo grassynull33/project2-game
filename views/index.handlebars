@@ -3,11 +3,22 @@
 {{> login-modal }}
 		<!-- Header -->
 			<div id="header" class="skel-layers-fixed">
+
 					<!-- Logo -->
 						<div id="logo">
-							<span class="image avatar48"><img src="/assets/images/avatar.jpg" alt="" /></span>
+							{{#unless logged_in}}
+							<a href="page-scroll" class="skel-layers-ignoreHref" data-toggle="modal" data-target="#login-modal">Login</a>
+							{{/unless}}
+						{{#if logged_in}}
+							<div>
+								<p>Welcome {{email}}! </p>
+								<p>You are user {{req.body.username}}.</p>
+								<a href="/characters"><button id="choose_character">Choose your Character!</button></a>
+							</div>
+						{{/if}}
+							{{!-- <span class="image avatar48"><img src="/assets/images/avatar.jpg" alt="" /></span>
 							<h1 id="title">Welcome {{email}}</h1>
-							<p>You are user {{username}}</p>
+							<p>You are user {{username}}</p> --}}
 						</div>
 
 					<!-- Nav -->
