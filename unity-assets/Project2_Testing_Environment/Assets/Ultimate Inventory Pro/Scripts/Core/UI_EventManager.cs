@@ -36,6 +36,8 @@ public class UI_EventManager : MonoBehaviour {
 
     public void PickupItemEvent(GameObject item, int slotID, bool wasStacked) //This event will be triggered when you pick up an item.
     {
+        DatabaseReference reference = FirebaseDatabase.DefaultInstance.GetReference("Inventory");
+        
         if (wasStacked) //Item was stacked on the inventory
         {
 
