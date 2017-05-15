@@ -1,8 +1,38 @@
-﻿using UnityEngine;
+﻿using Firebase;
+using Firebase.Database;
+using Firebase.Unity.Editor;
+using System;
 using System.Collections;
+using System.Collections.Generic;
+using System.Threading.Tasks;
+using UnityEngine;
 
 public class UI_EventManager : MonoBehaviour {
+    DependencyStatus dependencyStatus = DependencyStatus.UnavailableOther;
 
+    const int kMaxLogSize = 16382;
+   void Start()
+    {
+        dependencyStatus = FirebaseApp.CheckDependencies();
+        if (dependencyStatus != DependencyStatus.Available) {
+            FirebaseApp.FixDependenciesAsync().ContinueWith(task => {
+                dependencyStatus = FirebaseApp.CheckDependencies();
+                if (dependencyStatus == DependencyStatus.Available) {
+                    InitializeFirebase();
+                } else {
+                    Debug.LogError(
+                        "Could not resolve all Firebase dependencies: " + dependencyStatus);
+                }
+            });
+        } else {
+            InitializeFirebase();
+        }
+}
+            void InitializeFirebase() {
+        FirebaseApp app = FirebaseApp.DefaultInstance;
+        app.SetEditorDatabaseUrl("https://unity-93b07.firebaseio.com/");
+        if (app.Options.DatabaseUrl != null) app.SetEditorDatabaseUrl(app.Options.DatabaseUrl);
+  }
 
     public void PickupItemEvent(GameObject item, int slotID, bool wasStacked) //This event will be triggered when you pick up an item.
     {
