@@ -46,7 +46,7 @@ public class UI_EventManager : MonoBehaviour {
     return TransactionResult.Success(mutableData);
   }
 
-    public void PickupItemEvent(GameObject item, int slotID, bool wasStacked, string desc, string name) //This event will be triggered when you pick up an item.
+    public void PickupItemEvent(GameObject item, int slotID, bool wasStacked, string desc, string name, bool hasDurability, bool isCraftable, bool isBlueprint) //This event will be triggered when you pick up an item.
     {
         DatabaseReference reference = FirebaseDatabase.DefaultInstance.GetReference("Inventory");
 
@@ -63,6 +63,11 @@ public class UI_EventManager : MonoBehaviour {
         reference.Child("SlotID").Push().SetValueAsync(slotID);
         reference.Child("GreaterThanOne").Push().SetValueAsync(wasStacked);
         reference.Child("Item Name").Push().SetValueAsync(name);
+        reference.Child("Item Breakable?").Push().SetValueAsync(hasDurability);
+        reference.Child("Item Craftable?").Push().SetValueAsync(isCraftable);
+        reference.Child("Item Blueprint?").Push().SetValueAsync(isBlueprint);
+
+
 
         if (wasStacked) //Item was stacked on the inventory
         {

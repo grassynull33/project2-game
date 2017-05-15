@@ -261,7 +261,7 @@ public class UI_Inventory : MonoBehaviour
                             allDur[i] = item.GetComponent<UI_Item>().itemDurability; //assign the durability
                         }
                         Destroy(item); //Destroy the world model.
-                        eventManager.PickupItemEvent(itemsList.allItems[item.GetComponent<UI_Item>().itemID], i, true, item.GetComponent<UI_Item>().desc, item.GetComponent<UI_Item>().name); //Send information about the pickup on the event manager.
+                        eventManager.PickupItemEvent(itemsList.allItems[item.GetComponent<UI_Item>().itemID], i, true, item.GetComponent<UI_Item>().desc, item.GetComponent<UI_Item>().name, item.GetComponent<UI_Item>().hasDurability, item.GetComponent<UI_Item>().isCraftable, item.GetComponent<UI_Item>().isBlueprint); //Send information about the pickup on the event manager.
                     }
                 }
                 //The item does not exist so it would be added into a new slot.
@@ -276,7 +276,7 @@ public class UI_Inventory : MonoBehaviour
                         allDur[i] = item.GetComponent<UI_Item>().itemDurability; //assign the durability
                     }
                     Destroy(item); //Destroy the world model.
-                    eventManager.PickupItemEvent(itemsList.allItems[item.GetComponent<UI_Item>().itemID], i, false, item.GetComponent<UI_Item>().desc, item.GetComponent<UI_Item>().name); //Send information about the pickup on the event manager.
+                    eventManager.PickupItemEvent(itemsList.allItems[item.GetComponent<UI_Item>().itemID], i, false, item.GetComponent<UI_Item>().desc, item.GetComponent<UI_Item>().name, item.GetComponent<UI_Item>().hasDurability, item.GetComponent<UI_Item>().isCraftable, item.GetComponent<UI_Item>().isBlueprint); //Send information about the pickup on the event manager.
                 }
             }
         }
