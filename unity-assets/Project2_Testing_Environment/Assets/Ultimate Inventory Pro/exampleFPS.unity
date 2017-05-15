@@ -504,7 +504,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd11df300abce544b8e62da460890580, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  anims: {fileID: 20576520}
 --- !u!111 &20576520
 Animation:
   m_ObjectHideFlags: 0
@@ -531,16 +530,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38b4647b6af530e4d886bb18f5e4a895, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weapons:
-  - {fileID: 630053032}
-  - {fileID: 855069593}
-  - {fileID: 1391428896}
-  equipWeapons:
-  - {fileID: 630053032}
-  - {fileID: 855069593}
-  - {fileID: 1391428896}
-  selectedWeapon: 0
-  slotSource: -1
 --- !u!4 &20576522
 Transform:
   m_ObjectHideFlags: 0
@@ -899,6 +888,14 @@ Prefab:
     - target: {fileID: 121400, guid: 65af726a2345b7447b500f0f90cc70da, type: 2}
       propertyPath: m_Name
       value: Item01
+      objectReference: {fileID: 0}
+    - target: {fileID: 11452194, guid: 65af726a2345b7447b500f0f90cc70da, type: 2}
+      propertyPath: itemCat
+      value: Equipment
+      objectReference: {fileID: 0}
+    - target: {fileID: 11452194, guid: 65af726a2345b7447b500f0f90cc70da, type: 2}
+      propertyPath: equipmentCat
+      value: Head
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 65af726a2345b7447b500f0f90cc70da, type: 2}
@@ -4674,6 +4671,14 @@ Prefab:
       propertyPath: blueprintUnlock
       value: 
       objectReference: {fileID: 614008483}
+    - target: {fileID: 11465148, guid: 3607406b84f3de445a690fc1c43b9aa6, type: 2}
+      propertyPath: itemCat
+      value: Equipment
+      objectReference: {fileID: 0}
+    - target: {fileID: 11465148, guid: 3607406b84f3de445a690fc1c43b9aa6, type: 2}
+      propertyPath: equipmentCat
+      value: Head
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3607406b84f3de445a690fc1c43b9aa6, type: 2}
   m_IsPrefabParent: 0
@@ -4843,6 +4848,14 @@ Prefab:
     - target: {fileID: 427420, guid: 501316c04cf2e60488d664f755dd0b0e, type: 2}
       propertyPath: m_LocalScale.y
       value: 0.022878936
+      objectReference: {fileID: 0}
+    - target: {fileID: 11451702, guid: 501316c04cf2e60488d664f755dd0b0e, type: 2}
+      propertyPath: itemCat
+      value: Equipment
+      objectReference: {fileID: 0}
+    - target: {fileID: 11451702, guid: 501316c04cf2e60488d664f755dd0b0e, type: 2}
+      propertyPath: equipmentCat
+      value: Head
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 501316c04cf2e60488d664f755dd0b0e, type: 2}
@@ -5777,6 +5790,14 @@ Prefab:
     - target: {fileID: 427202, guid: 5192e0f180dd5f840bfa6fb4124cd726, type: 2}
       propertyPath: m_RootOrder
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11461580, guid: 5192e0f180dd5f840bfa6fb4124cd726, type: 2}
+      propertyPath: itemCat
+      value: Equipment
+      objectReference: {fileID: 0}
+    - target: {fileID: 11461580, guid: 5192e0f180dd5f840bfa6fb4124cd726, type: 2}
+      propertyPath: equipmentCat
+      value: Head
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5192e0f180dd5f840bfa6fb4124cd726, type: 2}
@@ -8609,6 +8630,14 @@ Prefab:
       propertyPath: m_Name
       value: Item02
       objectReference: {fileID: 0}
+    - target: {fileID: 11451544, guid: 0e5ae530977714b488787af98a2b0518, type: 2}
+      propertyPath: itemCat
+      value: Equipment
+      objectReference: {fileID: 0}
+    - target: {fileID: 11451544, guid: 0e5ae530977714b488787af98a2b0518, type: 2}
+      propertyPath: equipmentCat
+      value: Head
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0e5ae530977714b488787af98a2b0518, type: 2}
   m_IsPrefabParent: 0
@@ -8640,26 +8669,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 818a618c34e0aab4da0b3b71026e067d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponID: 0
-  hitTime: 0
-  unDrawTime: 0
-  drawAnim: 30
-  unDrawAnim: 30
-  hitAnims: []
-  anims: {fileID: 0}
-  hitKey: 323
-  hitPos: {fileID: 0}
-  hitRange: 0
-  swaySounds: []
-  hitSounds: []
-  drawSounds: []
-  unDrawSounds: []
-  useSounds: 0
-  hitParicles: []
-  useParticle: 0
-  woodFactor: 0
-  stoneFactor: 0
-  placeHolder: 1
 --- !u!82 &630053034
 AudioSource:
   m_ObjectHideFlags: 0
@@ -10396,8 +10405,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 392b9a12fa449f943ae35659021270d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1056761342}
-  roofGO: {fileID: 116358, guid: 9a277a6596a32ea4693e49845f0e7374, type: 2}
 --- !u!4 &761871489
 Transform:
   m_ObjectHideFlags: 0
@@ -12055,34 +12062,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 818a618c34e0aab4da0b3b71026e067d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponID: 1
-  hitTime: 0.4
-  unDrawTime: -1
-  drawAnim: 64726177
-  unDrawAnim: 756e64726177
-  hitAnims:
-  - 68697431
-  anims: {fileID: 95956670}
-  hitKey: 323
-  hitPos: {fileID: 1545942960}
-  hitRange: 2
-  swaySounds:
-  - {fileID: 8300000, guid: d6921ae8f4b89a940b53f336933a63fe, type: 3}
-  hitSounds:
-  - {fileID: 8300000, guid: d1ace9faa36bc024dab920d5b81644a4, type: 3}
-  - {fileID: 8300000, guid: d1ace9faa36bc024dab920d5b81644a4, type: 3}
-  drawSounds:
-  - {fileID: 8300000, guid: ebd98c031afbe854b86851b46eab74e9, type: 3}
-  unDrawSounds:
-  - {fileID: 8300000, guid: 7615753dff3eafb4ca6bc0a3f5966a90, type: 3}
-  useSounds: 1
-  hitParicles:
-  - {fileID: 188958, guid: fac864c080dfa88499340201f7b1f3f9, type: 2}
-  - {fileID: 100002, guid: 5a5ba7087d2b9b8479ef1d33b99d6d7f, type: 2}
-  useParticle: 1
-  woodFactor: 1
-  stoneFactor: -30
-  placeHolder: 0
 --- !u!82 &855069595
 AudioSource:
   m_ObjectHideFlags: 0
@@ -18009,6 +17988,14 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 11476214, guid: 68af65a810bcf5b4ea2671687de53074, type: 2}
+      propertyPath: itemCat
+      value: Equipment
+      objectReference: {fileID: 0}
+    - target: {fileID: 11476214, guid: 68af65a810bcf5b4ea2671687de53074, type: 2}
+      propertyPath: equipmentCat
+      value: Head
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 68af65a810bcf5b4ea2671687de53074, type: 2}
   m_IsPrefabParent: 0
@@ -18803,11 +18790,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e296a2d543f8d5b4696522c048ee28b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  foundationPreview: {fileID: 1495305057}
-  wallPreview: {fileID: 486851950}
-  doorPreview: {fileID: 1207420751}
-  roofPreview: {fileID: 761871486}
-  spawnPoint: {fileID: 1056761342}
 --- !u!1 &1294189553
 GameObject:
   m_ObjectHideFlags: 0
@@ -20081,34 +20063,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 818a618c34e0aab4da0b3b71026e067d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponID: 2
-  hitTime: 0.4
-  unDrawTime: 0.4
-  drawAnim: 64726177
-  unDrawAnim: 756e64726177
-  hitAnims:
-  - 686974
-  anims: {fileID: 21884471}
-  hitKey: 323
-  hitPos: {fileID: 1397755357}
-  hitRange: 3.5
-  swaySounds:
-  - {fileID: 8300000, guid: d6921ae8f4b89a940b53f336933a63fe, type: 3}
-  hitSounds:
-  - {fileID: 8300000, guid: d1ace9faa36bc024dab920d5b81644a4, type: 3}
-  - {fileID: 8300000, guid: d1ace9faa36bc024dab920d5b81644a4, type: 3}
-  drawSounds:
-  - {fileID: 8300000, guid: ebd98c031afbe854b86851b46eab74e9, type: 3}
-  unDrawSounds:
-  - {fileID: 8300000, guid: 7615753dff3eafb4ca6bc0a3f5966a90, type: 3}
-  useSounds: 1
-  hitParicles:
-  - {fileID: 188958, guid: fac864c080dfa88499340201f7b1f3f9, type: 2}
-  - {fileID: 100002, guid: 5a5ba7087d2b9b8479ef1d33b99d6d7f, type: 2}
-  useParticle: 1
-  woodFactor: -1
-  stoneFactor: 1
-  placeHolder: 0
 --- !u!82 &1391428898
 AudioSource:
   m_ObjectHideFlags: 0
@@ -21762,6 +21716,14 @@ Prefab:
     - target: {fileID: 132876, guid: 0e5ae530977714b488787af98a2b0518, type: 2}
       propertyPath: m_Name
       value: Cube Dur (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 11451544, guid: 0e5ae530977714b488787af98a2b0518, type: 2}
+      propertyPath: itemCat
+      value: Equipment
+      objectReference: {fileID: 0}
+    - target: {fileID: 11451544, guid: 0e5ae530977714b488787af98a2b0518, type: 2}
+      propertyPath: equipmentCat
+      value: Head
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0e5ae530977714b488787af98a2b0518, type: 2}
@@ -26519,7 +26481,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   spreadCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -26543,7 +26505,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
 --- !u!114 &1942397940
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26776,44 +26738,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 804fa21ef44709d4994504bf3c4019a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cam: {fileID: 933003783}
-  audio: {fileID: 506490986}
-  useBlur: 1
-  tempZones: []
-  healthUI: {fileID: 1802637318}
-  staminaUI: {fileID: 1752715871}
-  hungerUI: {fileID: 1231298069}
-  thirstUI: {fileID: 1124295219}
-  tempUI: {fileID: 881568465}
-  hpPanels:
-  - {fileID: 21300000, guid: b63452e3ae0ad22469f6580b5ca9109e, type: 3}
-  - {fileID: 21300000, guid: 0dc277c29621a25458a7c229febadb28, type: 3}
-  - {fileID: 21300000, guid: 464ca5235cb8d4747b3b61b8ba9d4972, type: 3}
-  - {fileID: 21300000, guid: a436dcfacafc9bc418c3923efc7acfbd, type: 3}
-  hpPanel: {fileID: 1550729327}
-  health: 100
-  stamina: 100
-  hunger: 100
-  thirst: 100
-  temp: 36
-  maxHealth: 100
-  maxStamina: 100
-  maxHunger: 100
-  maxThirst: 100
-  hungerDecreaseRate: 30
-  hungerDecreaseStep: 1
-  thirstDecreaseRate: 15
-  thirstDecreaseStep: 1
-  healthRengenRate: 5
-  healthRegenStep: 1
-  staminaRegenRate: 5
-  staminaRegenStep: 1
-  staminaUsage: 0.025
-  staminaJumpUsage: 0.5
-  hungryPoint: 0.1
-  thirstyPoint: 0.1
-  bleedToDeathRate: 5
-  bleedToDeathStep: 5
 --- !u!114 &1955679829
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26825,16 +26749,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 663c3e5f7fe2fb642ad7952eb6643778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  materials: []
-  matID: 
-  sounds0:
-  - {fileID: 8300000, guid: 42e65e088b3f4374e851b8dbd38f3df9, type: 3}
-  - {fileID: 8300000, guid: a7f6dda6d4f6268469105c6c013fda46, type: 3}
-  - {fileID: 8300000, guid: 66cbb14f4f2a21f47abff9ed0a0a4bd8, type: 3}
-  sounds1:
-  - {fileID: 8300000, guid: 8bc94ec6ed537e743b481638bdcd503d, type: 3}
-  - {fileID: 8300000, guid: 03c568cc3dd46f24b9c6fe819a145eba, type: 3}
-  - {fileID: 8300000, guid: 893cea63fb5e42f47a2a0a86a1ff9537, type: 3}
 --- !u!82 &1955679830
 AudioSource:
   m_ObjectHideFlags: 0
