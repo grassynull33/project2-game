@@ -10,6 +10,8 @@ using UnityEngine;
 public class UI_EventManager : MonoBehaviour {
     DependencyStatus dependencyStatus = DependencyStatus.UnavailableOther;
 
+    private string description = "";
+    private string item = "";
     const int kMaxLogSize = 16382;
    void Start()
     {
@@ -34,10 +36,30 @@ public class UI_EventManager : MonoBehaviour {
         if (app.Options.DatabaseUrl != null) app.SetEditorDatabaseUrl(app.Options.DatabaseUrl);
   }
 
+    TransactionResult InventoryUpdate(MutableData mutableData) {
+        List<object> inventory = mutableData.Value as List<object>;
+        Dictionary<string, object> inventorySetup = new Dictionary<string, object>();
+        inventorySetup["item"] = item;
+        // inventorySetup["description"] = description;
+        inventory.Add(inventorySetup);
+        mutableData.Value = inventory;
+    return TransactionResult.Success(mutableData);
+  }
+
     public void PickupItemEvent(GameObject item, int slotID, bool wasStacked) //This event will be triggered when you pick up an item.
     {
         DatabaseReference reference = FirebaseDatabase.DefaultInstance.GetReference("Inventory");
+
+        reference.RunTransaction(InventoryUpdate).ContinueWith(task => {
+         if (task.Exception != null) {
+        Debug.Log("Nope");
+      } else if (task.IsCompleted) {
+        Debug.Log("Works");
+      }
+    });
         
+        reference.Child("name").Push().SetValueAsync(item.name);
+
         if (wasStacked) //Item was stacked on the inventory
         {
 
