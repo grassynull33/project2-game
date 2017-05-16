@@ -27,7 +27,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 171818}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 342.0863, y: 40.575302, z: 420.4736}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -100,22 +100,29 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemID: 3
   itemPreview: {fileID: 21300000, guid: 1a22d8e7d49f73e459e0a7152048f055, type: 3}
-  name: 437261667465642050726f70
-  desc: 596f75206372616674656420746869732070726f702e
+  name: JavaScript Book
+  desc: Known for its compilation of the best practices in JavaScript. Only useful
+    for those who can handle reading such a lengthy tome.
   maxStack: 64
   itemWeight: 0
   hasDurability: 0
   itemDurability: 100
   useDurability: 0
-  itemCat: 4e6f726d616c
-  equipmentCat: 48656164
+  itemCat: Equipment
+  equipmentCat: Head
   destroyOnUse: 0
   objectsToEquip: []
   statsToEditOnConsume: []
   pickUpWhenOver: 0
   isCraftable: 1
-  craftingTime: 5
+  craftingTime: 60
+  resourcesID: 0000000001000000
+  resourcesAmount: 0300000001000000
+  afford: 
   inv: {fileID: 0}
+  isBlueprint: 0
+  blueprintUnlock: {fileID: 0}
+  isBuilding: 0
 --- !u!136 &13608820
 CapsuleCollider:
   m_ObjectHideFlags: 1

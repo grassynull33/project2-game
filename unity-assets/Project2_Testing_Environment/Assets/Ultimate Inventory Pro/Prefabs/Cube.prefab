@@ -28,7 +28,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 121400}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 337.9, y: 40.075302, z: 432.97037}
+  m_LocalPosition: {x: 5.4600525, y: -0.77469635, z: -80.142334}
   m_LocalScale: {x: 0.40762728, y: 0.40762728, z: 0.40762728}
   m_Children: []
   m_Father: {fileID: 0}
@@ -125,15 +125,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemID: 0
   itemPreview: {fileID: 21300000, guid: 1712170070c76d14eb83b8e89e579dc9, type: 3}
-  name: 546573742043756265
-  desc: 5468697320697320612074657374206375626520666f7220556c74696d61746520496e76656e746f72792032303136
+  name: Cube of Destruction
+  desc: It's an enigmatic item known only for its shape. There are some rumors of
+    those who have picked up this object have perished, including any life within
+    a 50m radius of contact.
   maxStack: 8
   itemWeight: 5
   hasDurability: 0
   itemDurability: 100
   useDurability: 0
-  itemCat: 4e6f726d616c
-  equipmentCat: 
+  itemCat: Equipment
+  equipmentCat: Head
   destroyOnUse: 1
   objectsToEquip: []
   statsToEditOnConsume: []
@@ -142,7 +144,7 @@ MonoBehaviour:
   craftingTime: 10
   resourcesID: 
   resourcesAmount: 
-  afford: []
+  afford: 
   inv: {fileID: 0}
   isBlueprint: 0
   blueprintUnlock: {fileID: 0}

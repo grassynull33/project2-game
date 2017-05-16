@@ -112,15 +112,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemID: 4
   itemPreview: {fileID: 21300000, guid: d0de4f4da2c19e84d9e4d441deaaf926, type: 3}
-  name: 426c75657072696e7420666f722067756e
-  desc: 5468697320626c75657072696e742077696c6c20616c6c6f7720796f7520746f20637261667420612067756e2e
+  name: Icelandic Glacial Spikes
+  desc: It is so sharp and yet so transparent, some of those who happen to get hit
+    by it are unware of the damage they've been inflicted until it's too late.
   maxStack: 2
   itemWeight: 0
   hasDurability: 0
   itemDurability: 100
   useDurability: 0
-  itemCat: 436f6e73756d61626c65
-  equipmentCat: 
+  itemCat: Equipment
+  equipmentCat: Feet
   destroyOnUse: 1
   objectsToEquip: []
   statsToEditOnConsume: []
@@ -129,7 +130,7 @@ MonoBehaviour:
   craftingTime: 10
   resourcesID: 
   resourcesAmount: 
-  afford: []
+  afford: 
   inv: {fileID: 0}
   isBlueprint: 1
   blueprintUnlock: {fileID: 0}

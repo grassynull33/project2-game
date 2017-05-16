@@ -11,8 +11,7 @@ using UnityEngine;
 public class UI_EventManager : MonoBehaviour {
     DependencyStatus dependencyStatus = DependencyStatus.UnavailableOther;
 
-    private string description = "";
-    private string item = "";
+ 
     const int kMaxLogSize = 16382;
    void Start()
     {
@@ -33,25 +32,17 @@ public class UI_EventManager : MonoBehaviour {
 }
             void InitializeFirebase() {
         FirebaseApp app = FirebaseApp.DefaultInstance;
-        app.SetEditorDatabaseUrl("https://unity-93b07.firebaseio.com/");
+        app.SetEditorDatabaseUrl("https://unity-93b07.firebaseio.com/"); // Change Firebase Address based on your needs DEFAULT: unity-93b07.firebaseio.com/
         if (app.Options.DatabaseUrl != null) app.SetEditorDatabaseUrl(app.Options.DatabaseUrl);
   }
 
     TransactionResult InventoryUpdate(MutableData mutableData) {
         List<object> inventory = mutableData.Value as List<object>;
         Dictionary<string, object> inventorySetup = new Dictionary<string, object>();
-        inventorySetup["item"] = item;
-        // inventorySetup["description"] = description;
         inventory.Add(inventorySetup);
         mutableData.Value = inventory;
     return TransactionResult.Success(mutableData);
   }
-
-    private void AddScoreToLeaders(string name,
-                                   string desciption,
-                                   DatabaseReference leaderBoardRef)
-    {
-    }
 
     public void PickupItemEvent(GameObject item, int slotID, bool wasStacked, string desc, string name, bool hasDurability, bool isCraftable, bool isBlueprint) //This event will be triggered when you pick up an item.
     {
@@ -72,13 +63,21 @@ public class UI_EventManager : MonoBehaviour {
                 inventory = new List<object>();
             }
 
-            // Add the new high score.
             Dictionary<string, object> itemData =
                              new Dictionary<string, object>();
-            itemData["item name"] = name;
-            itemData["description"] = desc;
+            itemData["ItemName"] = name;
+            itemData["Description"] = desc;
+            itemData["SlotID"] = slotID;
+            itemData["GreaterThanOne"] = wasStacked;
+            itemData["HasDurability"] = hasDurability;
+            itemData["IsCraftable"] = isCraftable;
+            itemData["IsBlueprint"] = isBlueprint;
             inventory.Add(itemData);
             mutableData.Value = inventory;
+            //// To use if you need to get information from Unity's Compiler or Visual Studios.
+            //Debug.Log(inventory);
+            //Debug.Log(mutableData);
+            //Debug.Log(itemData);
             return TransactionResult.Success(mutableData);
         });
 
