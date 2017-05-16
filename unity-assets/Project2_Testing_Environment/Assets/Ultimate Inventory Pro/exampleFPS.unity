@@ -17960,14 +17960,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
-    - target: {fileID: 11476214, guid: 68af65a810bcf5b4ea2671687de53074, type: 2}
-      propertyPath: itemCat
-      value: Equipment
-      objectReference: {fileID: 0}
-    - target: {fileID: 11476214, guid: 68af65a810bcf5b4ea2671687de53074, type: 2}
-      propertyPath: equipmentCat
-      value: Head
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 68af65a810bcf5b4ea2671687de53074, type: 2}
   m_IsPrefabParent: 0
@@ -26749,7 +26741,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   spreadCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -26773,7 +26765,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
 --- !u!54 &1955679831
 Rigidbody:
   m_ObjectHideFlags: 0
