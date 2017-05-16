@@ -1,4 +1,5 @@
-﻿using Firebase;
+﻿using Assets.Ultimate_Inventory_Pro.Scripts.Core;
+using Firebase;
 using Firebase.Database;
 using Firebase.Unity.Editor;
 using System;
@@ -46,26 +47,50 @@ public class UI_EventManager : MonoBehaviour {
     return TransactionResult.Success(mutableData);
   }
 
+    private void AddScoreToLeaders(string name,
+                                   string desciption,
+                                   DatabaseReference leaderBoardRef)
+    {
+    }
+
     public void PickupItemEvent(GameObject item, int slotID, bool wasStacked, string desc, string name, bool hasDurability, bool isCraftable, bool isBlueprint) //This event will be triggered when you pick up an item.
     {
         DatabaseReference reference = FirebaseDatabase.DefaultInstance.GetReference("Inventory");
 
-        reference.RunTransaction(InventoryUpdate).ContinueWith(task => {
+    reference.RunTransaction(InventoryUpdate).ContinueWith(task => {
          if (task.Exception != null) {
         Debug.Log("Nope");
       } else if (task.IsCompleted) {
         Debug.Log("Works");
       }
     });
-        
-        reference.Child("Object Item Name").Push().SetValueAsync(item.name);
-        reference.Child("Description").Push().SetValueAsync(desc);
-        reference.Child("SlotID").Push().SetValueAsync(slotID);
-        reference.Child("GreaterThanOne").Push().SetValueAsync(wasStacked);
-        reference.Child("Item Name").Push().SetValueAsync(name);
-        reference.Child("Item Breakable?").Push().SetValueAsync(hasDurability);
-        reference.Child("Item Craftable?").Push().SetValueAsync(isCraftable);
-        reference.Child("Item Blueprint?").Push().SetValueAsync(isBlueprint);
+        reference.RunTransaction(mutableData => {
+            List<object> inventory = mutableData.Value as List<object>;
+
+            if (inventory == null)
+            {
+                inventory = new List<object>();
+            }
+
+            // Add the new high score.
+            Dictionary<string, object> itemData =
+                             new Dictionary<string, object>();
+            itemData["item name"] = name;
+            itemData["description"] = desc;
+            inventory.Add(itemData);
+            mutableData.Value = inventory;
+            return TransactionResult.Success(mutableData);
+        });
+
+        // This part is preliminary data pulls to test that they all work. To compile them into more organized format, look above for RunTransaction.
+        // reference.Child("Object Item Name").Push().SetValueAsync(item.name);
+        // reference.Child("Description").Push().SetValueAsync(desc);
+        // reference.Child("SlotID").Push().SetValueAsync(slotID);
+        // reference.Child("GreaterThanOne").Push().SetValueAsync(wasStacked);
+        // reference.Child("Item Name").Push().SetValueAsync(name);
+        // reference.Child("Item Breakable?").Push().SetValueAsync(hasDurability);
+        // reference.Child("Item Craftable?").Push().SetValueAsync(isCraftable);
+        // reference.Child("Item Blueprint?").Push().SetValueAsync(isBlueprint);
 
 
 
@@ -114,4 +139,8 @@ public class UI_EventManager : MonoBehaviour {
 		
 	}
 
+}
+
+namespace Assets.Ultimate_Inventory_Pro.Scripts.Core
+{
 }
