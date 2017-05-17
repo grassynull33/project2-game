@@ -7,21 +7,33 @@ module.exports = function (sequelize, DataTypes) {
       allowNull: false
     },
     description: {
-      type: DataTypes.STRING,
+      type: DataTypes.TEXT,
       allowNull: false
     },
     slotID: {
       type: DataTypes.INTEGER,
       allowNull: false
     },
-    moreThanOne: {
-      type: DataTypes.STRING,
+    greaterThanOne: {
+      type: DataTypes.BOOLEAN,
       allowNull: false
     },
     uniqueID: {
-      type: DataTypes.STRING,
+      type: DataTypes.INTEGER,
       allowNull: false,
       unique: true
+    },
+    hasDurability: {
+      type: DataTypes.BOOLEAN,
+      allowNull: false
+    },
+    isBlueprint: {
+      type: DataTypes.BOOLEAN,
+      allowNull: false
+    },
+    isCraftable: {
+      type: DataTypes.BOOLEAN,
+      allowNull: false
     }
   });
   return Item;
