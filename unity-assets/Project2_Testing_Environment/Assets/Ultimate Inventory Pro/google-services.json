@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "363039064298",
+    "firebase_url": "https://unity-93b07.firebaseio.com",
+    "project_id": "unity-93b07",
+    "storage_bucket": "unity-93b07.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:363039064298:android:4524780f8d314157",
+        "android_client_info": {
+          "package_name": "com.UCLA.Brandon"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "363039064298-8no813otq61qdtnnqf67acheqaetgiu1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCk_3Fb9f-_8_z-V-sl7vucfQk-6tGmzuQ"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
