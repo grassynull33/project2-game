@@ -14,7 +14,7 @@
 
 	body
 	{
-		background: #fff;
+		background: #222629;
 	}
 
 		body.is-loading *
@@ -43,10 +43,14 @@
 	h1,h2,h3,h4,h5,h6
 	{
 		font-weight: 300;
-		color: #666;
+		color: #fff;
 		line-height: 1.5em;
 	}
-	
+
+	.login-help a {color: #fff;}
+
+	.login-help a:hover {color: #e22732;}
+
 		h1 a, h2 a, h3 a, h4 a, h5 a, h6 a
 		{
 			color: inherit;
@@ -207,7 +211,7 @@
 			{
 				width: 48px;
 				height: 48px;
-				background: #f00;
+				/*background: #f00;*/
 			}
 			
 				.image.avatar48 img
@@ -450,7 +454,7 @@
 			color: #fff !important;
 			text-decoration: none;
 			padding: 0.75em 2.5em 0.75em 2.5em;
-			background-color: #8ebebc;
+			background-color: #e22732;
 			border: 0;
 			cursor: pointer;
 			background-image: -moz-linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0,0.15)), url('../images/overlay.png');
@@ -672,7 +676,7 @@
 
 							#nav ul li a.active span:before
 							{
-								color: #e27689;
+								color: #e22732;
 							}
 
 /*********************************************************************************/
@@ -683,7 +687,7 @@
 	{
 		margin-left: 375px;
 		text-align: center;
-		background-color: #dce3e2;
+		background-color: #222629;
 		padding: 3em 0 4em 0;
 		box-shadow: inset 0 1px 0 0 rgba(0,0,0,0.05), inset 0 0.1em 0.1em 0 rgba(0,0,0,0.025);
 		font-size: 0.8em;
@@ -767,22 +771,29 @@
 			#main > section.one
 			{
 				background-color: #81918E;
-				background-image: url('../images/banner.jpg');
+				background-image: url('../images/forest.jpg');
 			}
-
+		
 			#main > section.two
 			{
 				background-color: #f5fafa;
+				background-image: url('../images/forest03.jpg');
+				background-size: cover;
+
 			}
 		
 			#main > section.three
 			{
 				background-color: #ecf1f1;
+				background-image: url('../images/forest04.jpg');
+				background-size: cover;
+
+
 			}
 		
 			#main > section.four
 			{
-				background-color: #e8edec;
+				background-color: #222629;
 			}
 
 /*********************************************************************************/
@@ -830,8 +841,16 @@
 	margin-left:250px;
 }
 */
-#login_header {
+/*#login_header {
 	background-color: #0f7fda;
 	color:#d8000c;
-	/*margin-left:250px;*/
+	margin-left:250px;
+}*/
+
+.achievement-true {
+	color: #33FF00;
+}
+
+.achievement-false {
+	color: #FFCC33;
 }
