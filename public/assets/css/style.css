@@ -846,3 +846,11 @@
 	color:#d8000c;
 	margin-left:250px;
 }*/
+
+.achievement-true {
+	color: #33FF00;
+}
+
+.achievement-false {
+	color: #FFCC33;
+}
