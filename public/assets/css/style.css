@@ -771,7 +771,7 @@
 			#main > section.one
 			{
 				background-color: #81918E;
-				background-image: url('../images/forest.jpg');
+				background-image: linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4) ), url('../images/forest.jpg');
 			}
 		
 			#main > section.two
@@ -863,4 +863,8 @@
 #main > section.five h3
 {
 	color: #333;
+}
+
+#brand-logo {
+	width: 80%;
 }
