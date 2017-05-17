@@ -40,9 +40,7 @@ router.get('/firebase', function (req, res) {
   });
 });
 
-router.get('/', function (req, res) {
-  console.log('GET REQUEST IN INDEX.jS (ROUTES)');
-  achievementController.checkAchievements;
-});
+router.get('/', achievementController.checkAchievements;
+);
 
 module.exports = router;
