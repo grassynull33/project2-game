@@ -34,12 +34,18 @@ exports.checkAchievements = function (req, res) {
   db.Item.findAll().then(function (results) {
     for (var i = 0; i < results.length; i++) {
       data.items.push(results[i].dataValues);
+
       if (allItems.indexOf(results[i].dataValues.name) === -1) {
         collectedAll = false;
       }
 
       if (collectionItems.indexOf(results[i].dataValues.name) === -1) {
         achievements.collection = false;
+      }
+
+      // quantity overload
+      if (results[i].dataValues.greaterThanOne === true) {
+        achievements.quantity = true;
       }
 
       // hoarder
@@ -51,21 +57,13 @@ exports.checkAchievements = function (req, res) {
       if (results[i].dataValues.name === 'Super Rare Item') {
         achievements.needle = true;
       }
-
-      db.Item.count({ where: {'name': results[i].dataValues.name}}).then(function (count) {
-        console.log('there are ' + count);
-        if (count > 4) {
-          achievements.quantity = true;
-        }
-      });
     }
-  }).then(function () {
+
     // ultimate collector
     if (collectedAll) {
       achievements.ultimate = true;
     }
 
-    // console.log(data);
     console.log(achievements);
     res.render('index', achievements);
   });
