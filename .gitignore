@@ -39,3 +39,6 @@ jspm_packages
 .DS_Store
 
 project2-4eb1dfda9ce9.json
+
+# to prevent leak of AWS remote MySQL db
+config/config.json
