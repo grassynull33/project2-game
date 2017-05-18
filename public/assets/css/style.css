@@ -474,7 +474,7 @@
 			input[type="reset"]:hover,
 			.button:hover
 			{
-				background-color: #9ececc;
+				background-color: #000000;
 			}
 			
 			input[type="button"]:active,
@@ -482,7 +482,7 @@
 			input[type="reset"]:active,
 			.button:active
 			{
-				background-color: #7eaeac;
+				background-color: #e22732;
 			}
 		
 	/* Item */
@@ -771,13 +771,13 @@
 			#main > section.one
 			{
 				background-color: #81918E;
-				background-image: linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4) ), url('../images/forest.jpg');
+				background-image: linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4) ), url('../images/BG01.jpg');
 			}
 		
 			#main > section.two
 			{
 				background-color: #f5fafa;
-				background-image: url('../images/forest03.jpg');
+				background-image: url('../images/BG02.jpg');
 				background-size: cover;
 
 			}
