@@ -1,6 +1,7 @@
 var firebase = require('firebase-admin');
 var express = require('express');
 var router = express.Router();
+var minigameController = require('../controllers/minigameController');
 var achievementController = require('../controllers/achievementController');
 
 var db = require('../models');
@@ -40,6 +41,9 @@ router.get('/firebase', function (req, res) {
   });
 });
 
-router.get('/', achievementController.checkAchievements);
+router.get('/',
+  minigameController.checkMinigame,
+  achievementController.checkAchievements
+);
 
 module.exports = router;
