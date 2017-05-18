@@ -18,12 +18,13 @@ var app = express();
 // override POST to have DELETE and PUT
 app.use(methodOverride('_method'));
 
-// //allow sessions
-// app.use(session({ secret: 'booty Mctootie', cookie: { maxAge: 60000 },
-//  resave: false,
-//  saveUninitialized: true,
-// }));
-// app.use(cookieParser());
+// allow sessions
+app.use(session({ secret: 'booty Mctootie',
+  cookie: { maxAge: 60000 },
+  resave: false,
+  saveUninitialized: true
+}));
+app.use(cookieParser());
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -58,13 +59,13 @@ app.use(function (req, res, next) {
 
 // error handler
 // no stacktraces leaked to user unless in development environment
-// app.use(function (err, req, res, next) {
-//   res.status(err.status || 500);
-//   res.render('error', {
-//     message: err.message,
-//     error: (app.get('env') === 'development') ? err : {}
-//   });
-// });
+app.use(function (err, req, res, next) {
+  res.status(err.status || 500);
+  res.render('error', {
+    message: err.message,
+    error: (app.get('env') === 'development') ? err : {}
+  });
+});
 
 // our module get's exported as app.
 module.exports = app;

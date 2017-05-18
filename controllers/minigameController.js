@@ -10,9 +10,9 @@ exports.checkMinigame = function (req, res, next) {
       data.items.push(results[i].dataValues);
     }
 
-    console.log(data.items);
+    // console.log(data.items);
 
-    console.log('minigame controller passing thru');
+    // console.log('minigame controller passing thru');
 
     res.locals.items = data.items;
 

@@ -18,7 +18,7 @@ router.get('/firebase', function (req, res) {
   var ref = fireDB.ref('Inventory');
 
   ref.on('child_added', function (snapshot) {
-    console.log(snapshot.key, snapshot.val().ItemName);
+    // console.log(snapshot.key, snapshot.val().ItemName);
 
     db.Item.create({
       name: snapshot.val().ItemName,
