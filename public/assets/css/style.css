@@ -474,7 +474,7 @@
 			input[type="reset"]:hover,
 			.button:hover
 			{
-				background-color: #9ececc;
+				background-color: #fd4550;
 			}
 			
 			input[type="button"]:active,
@@ -482,7 +482,7 @@
 			input[type="reset"]:active,
 			.button:active
 			{
-				background-color: #7eaeac;
+				background-color: #f7646d;
 			}
 		
 	/* Item */
@@ -777,7 +777,7 @@
 			#main > section.two
 			{
 				background-color: #f5fafa;
-				background-image: url('../images/forest03.jpg');
+				background-image: linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4) ), url('../images/forest03.jpg');
 				background-size: cover;
 
 			}
@@ -785,7 +785,7 @@
 			#main > section.three
 			{
 				background-color: #ecf1f1;
-				background-image: url('../images/forest04.jpg');
+				background-image: linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4) ), url('../images/forest04.jpg');
 				background-size: cover;
 
 
@@ -905,4 +905,26 @@
     width: 2em;
     display: inline-block; /* to size width correctly, can use float too, or width*/  
     border: 2px solid rgb(136, 136, 136);
+}
+
+#madewithunity {
+	width: 25%;
+	opacity: 0.5;
+	filter: alpha(opacity=50); /* For IE8 and earlier */
+}
+
+#madewithunity:hover {
+	opacity: 1;
+	filter: alpha(opacity=100); /* For IE8 and earlier */
+}
+
+.realtime {
+	text-transform: uppercase;
+	letter-spacing: 4px;
+	font-size: 0.8em;
+	color: #fff;
+}
+
+#brand-nav {
+	width: 100%;
 }

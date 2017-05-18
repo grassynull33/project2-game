@@ -3,11 +3,11 @@ var express = require('express');
 var router = express.Router();
 var passport = require('../config/passport');
 
-router.get('/login', function (req, res) {
-  res.render('login', {
-    title: 'Express Login'
-  });
-});
+// router.get('/login', function (req, res) {
+//   res.render('login', {
+//     title: 'Express Login'
+//   });
+// });
 
 // this is the users_controller.js file
 router.get('/signup', function (req, res) {
