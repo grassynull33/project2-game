@@ -76,3 +76,9 @@ sysinfo.txt
 
 oculussig_0915f9e3784f2b04
 oculussig_0915f9e3784f2b04.meta
+
+#Specific Asset Exclusion for Github post.buffer (Http) issues.
+
+/Gaia
+/GI
+/Standard Assets/
