@@ -2,6 +2,7 @@ var db = require('../models');
 var express = require('express');
 var router = express.Router();
 var passport = require('../config/passport');
+var isAuthenticated = require('../config/middleware/isAuthenticated');
 
 router.get('/login', function (req, res) {
   res.render('login', {
@@ -45,7 +46,9 @@ router.post('/signup', function (req, res) {
         email: req.body.email,
         password: req.body.password
       }).then(function () {
-        res.send({redirect: '/'});
+        // res.send({redirect: '/'});
+        res.redirect(307, '/login');
+        // res.redirect('/');
       }).catch(function (err) {
         res.json(err);
       });
