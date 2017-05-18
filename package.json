@@ -24,6 +24,7 @@
     "express": "^4.15.2",
     "express-handlebars": "^3.0.0",
     "express-session": "^1.15.2",
+    "firebase": "^3.9.0",
     "firebase-admin": "^4.2.1",
     "method-override": "^2.3.8",
     "morgan": "^1.8.1",
