@@ -4,6 +4,7 @@ var router = express.Router();
 var minigameController = require('../controllers/minigameController');
 var achievementController = require('../controllers/achievementController');
 var userController = require('../controllers/userController');
+var itemController = require('../controllers/itemController');
 
 var passport = require('../config/passport');
 var isAuthenticated = require('../config/middleware/isAuthenticated');
@@ -47,7 +48,8 @@ router.get('/firebase', function (req, res) {
 
 router.get('/',
   minigameController.checkMinigame,
-  achievementController.checkAchievements
+  achievementController.checkAchievements,
+  itemController.checkItemsList
 );
 
 router.get('/users/signup', function (req, res) {
