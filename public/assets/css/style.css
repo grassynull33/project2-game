@@ -898,3 +898,11 @@
   50% { background-position: 100% 50% }
   100% { background-position: 0% 50% }
 }
+
+.jSlots-wrapper {
+    overflow: hidden; /* to hide the magic */  
+    height: 2em; /* whatever the height of your list items are */
+    width: 2em;
+    display: inline-block; /* to size width correctly, can use float too, or width*/  
+    border: 2px solid rgb(136, 136, 136);
+}
