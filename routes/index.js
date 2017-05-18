@@ -89,6 +89,7 @@ router.post('/users/login', passport.authenticate('local'), function (req, res) 
     // They won't get this or even be able to access this page if they aren't authed
   // res.json('/');
   res.send({redirect: '/'});
+  // res.redirect('/');
 });
 
 // Route for getting some data about our user to be used client side

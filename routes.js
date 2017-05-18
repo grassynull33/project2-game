@@ -5,8 +5,6 @@ module.exports = function (app) {
   var itemController = require('./controllers/itemController');
 
   app.use('/', index);
-  app.use('/users', userController);
-  app.use('/firebase', itemController);
 
     // other routes..
 };
