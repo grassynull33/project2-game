@@ -120,7 +120,8 @@ $(document).ready(function () {
         // Replace with Modal
         alert('Sorry, that username has been taken');
       } else {
-        window.location = data.redirect;
+        // console.log(data.redirect);
+        window.location.href = data.redirect;
       }
     }).catch(function (err) {
       console.log(err);
