@@ -1,9 +1,47 @@
 ﻿using UnityEngine;
 using System;
 using UInventory;
+using System.Collections;
+using Firebase;
+using Firebase.Database;
+using Firebase.Unity.Editor;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 public class UI_SaveSystem : MonoBehaviour {
+
+    DependencyStatus dependencyStatus = DependencyStatus.UnavailableOther;
+    const int kMaxLogSize = 16382;
+       void Start()
+    {
+        dependencyStatus = FirebaseApp.CheckDependencies();
+        if (dependencyStatus != DependencyStatus.Available) {
+            FirebaseApp.FixDependenciesAsync().ContinueWith(task => {
+                dependencyStatus = FirebaseApp.CheckDependencies();
+                if (dependencyStatus == DependencyStatus.Available) {
+                    InitializeFirebase();
+                } else {
+                    Debug.LogError(
+                        "Could not resolve all Firebase dependencies: " + dependencyStatus);
+                }
+            });
+        } else {
+            InitializeFirebase();
+        }
+}
+            void InitializeFirebase() {
+        FirebaseApp app = FirebaseApp.DefaultInstance;
+        app.SetEditorDatabaseUrl("https://unity-93b07.firebaseio.com/"); // Change Firebase Address based on your needs DEFAULT: unity-93b07.firebaseio.com/
+        if (app.Options.DatabaseUrl != null) app.SetEditorDatabaseUrl(app.Options.DatabaseUrl);
+  }
+
+    TransactionResult InventoryUpdate(MutableData mutableData) {
+        List<object> inventory = mutableData.Value as List<object>;
+        Dictionary<string, object> inventorySetup = new Dictionary<string, object>();
+        inventory.Add(inventorySetup);
+        mutableData.Value = inventory;
+    return TransactionResult.Success(mutableData);
+  }
 
     public bool testGUI = false;
 
@@ -52,8 +90,12 @@ public class UI_SaveSystem : MonoBehaviour {
 
     public void SaveInventory()
     {
+        DatabaseReference reference = FirebaseDatabase.DefaultInstance.GetReference("SavedInventory");
+
         try
         {
+
+
             string saveData = "[ver]" + UI_Inventory.currentVersion + "[/ver]" + Environment.NewLine
                 + "[force_ver]" + forceVer.ToString() + "[/force_ver]" + Environment.NewLine + "[items]" + Environment.NewLine;
 
@@ -67,6 +109,7 @@ public class UI_SaveSystem : MonoBehaviour {
                 {
                     saveData += "-1" + Environment.NewLine;
                 }
+
             }
             saveData += "[/items]" + Environment.NewLine + "[stack]" + Environment.NewLine;
 
@@ -95,10 +138,27 @@ public class UI_SaveSystem : MonoBehaviour {
                 }
             }
             saveData += "[/dur]" + Environment.NewLine;
+            string extractData = saveData;
+reference.RunTransaction(mutableData => {
+            List<object> inventory = mutableData.Value as List<object>;
+
+            if (inventory == null)
+            {
+                inventory = new List<object>();
+            }
+            Dictionary<string, object> itemData =
+                             new Dictionary<string, object>();
+
+            
+            itemData["Save Data"] = extractData;
+            inventory.Add(itemData);
+            mutableData.Value = inventory;
+            return TransactionResult.Success(mutableData);
+        });
+Debug.Log(saveData); // Testing Purposes
 
             string encrypted = USecurity.EncryptString(saveData, encryptPassword);
             saveData = "0";
-
             PlayerPrefs.SetString(saveName, encrypted);
         }
         catch(Exception ex)
@@ -114,7 +174,6 @@ public class UI_SaveSystem : MonoBehaviour {
         try
         {
             string loadData = USecurity.DecryptString(PlayerPrefs.GetString(saveName), encryptPassword);
-
             string Lver = USecurity.ExtractBetween(loadData, "[ver]", "[/ver]", false);
             bool Lforce_ver = bool.Parse(USecurity.ExtractBetween(loadData, "[force_ver]", "[/force_ver]", false));
             string itemsString = USecurity.ExtractBetween(loadData, "[items]", "[/items]",false);

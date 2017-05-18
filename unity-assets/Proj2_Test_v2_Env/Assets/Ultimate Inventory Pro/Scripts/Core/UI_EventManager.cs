@@ -44,7 +44,7 @@ public class UI_EventManager : MonoBehaviour {
     return TransactionResult.Success(mutableData);
   }
 
-    public void PickupItemEvent(GameObject item, int slotID, bool wasStacked, string desc, string name, bool hasDurability, bool isCraftable, bool isBlueprint) //This event will be triggered when you pick up an item.
+    public void PickupItemEvent(GameObject item, int slotID, bool wasStacked, string desc, string name, bool hasDurability, bool isCraftable, bool isBlueprint, int itemID) //This event will be triggered when you pick up an item.
     {
     	DatabaseReference reference = FirebaseDatabase.DefaultInstance.GetReference("Inventory");
 
@@ -58,6 +58,7 @@ public class UI_EventManager : MonoBehaviour {
 
             Dictionary<string, object> itemData =
                              new Dictionary<string, object>();
+            itemData["Item ID"] = itemID;
             itemData["ItemName"] = name;
             itemData["Description"] = desc;
             itemData["SlotID"] = slotID;
