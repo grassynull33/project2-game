@@ -28,7 +28,8 @@ $(document).ready(function () {
       username: username,
       password: password
     }).then(function (data) {
-      window.location.replace(data);
+      console.log(data.redirect);
+      window.location.href = data.redirect;
       // If there's an error, log the error
     }).catch(function (err) {
       console.log(err);
