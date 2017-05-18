@@ -1,7 +1,12 @@
 var firebase = require('firebase-admin');
 var express = require('express');
 var router = express.Router();
+var minigameController = require('../controllers/minigameController');
 var achievementController = require('../controllers/achievementController');
+var userController = require('../controllers/userController');
+
+var passport = require('../config/passport');
+var isAuthenticated = require('../config/middleware/isAuthenticated');
 
 var db = require('../models');
 
@@ -17,7 +22,7 @@ router.get('/firebase', function (req, res) {
   var ref = fireDB.ref('Inventory');
 
   ref.on('child_added', function (snapshot) {
-    console.log(snapshot.key, snapshot.val().ItemName);
+    // console.log(snapshot.key, snapshot.val().ItemName);
 
     db.Item.create({
       name: snapshot.val().ItemName,
@@ -40,6 +45,34 @@ router.get('/firebase', function (req, res) {
   });
 });
 
-router.get('/', achievementController.checkAchievements);
+router.get('/',
+  minigameController.checkMinigame,
+  achievementController.checkAchievements
+);
+
+// login
+router.post('/login', passport.authenticate('local'), function (req, res) {
+    // Since we're doing a POST with javascript, we can't actually redirect that post into a GET request
+    // So we're sending the user back the route to the members page because the redirect will happen on the front end
+    // They won't get this or even be able to access this page if they aren't authed
+  // res.json('/');
+  res.send({redirect: '/'});
+});
+
+// Route for getting some data about our user to be used client side
+router.get('/api/user_data', function (req, res) {
+  if (!req.user) {
+    // The user is not logged in, send back an empty object
+    res.json({});
+  } else {
+    // Otherwise send back the user's email and id
+    // Sending back a password, even a hashed password, isn't a good idea
+    res.json({
+      email: req.user.email,
+      id: req.user.id,
+      username: req.user.username
+    });
+  }
+});
 
 module.exports = router;

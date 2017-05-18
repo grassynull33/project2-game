@@ -1,6 +1,10 @@
 var db = require('../models');
 
 exports.checkAchievements = function (req, res) {
+  // console.log('ACHIEVEMENTS MIDDLEWARE');
+
+  var superRareItem = 'Archon_Helm';
+
   var achievements = {
     hoarder: false,
     needle: false,
@@ -31,40 +35,38 @@ exports.checkAchievements = function (req, res) {
     'Catcher\'s Mitt'
   ];
 
-  db.Item.findAll().then(function (results) {
-    for (var i = 0; i < results.length; i++) {
-      data.items.push(results[i].dataValues);
+  var results = res.locals.items;
 
-      if (allItems.indexOf(results[i].dataValues.name) === -1) {
-        collectedAll = false;
-      }
-
-      if (collectionItems.indexOf(results[i].dataValues.name) === -1) {
-        achievements.collection = false;
-      }
-
-      // quantity overload
-      if (results[i].dataValues.greaterThanOne === true) {
-        achievements.quantity = true;
-      }
-
-      // hoarder
-      if (results.length >= 40) {
-        achievements.hoarder = true;
-      }
-
-      // needle in a haystack
-      if (results[i].dataValues.name === 'Super Rare Item') {
-        achievements.needle = true;
-      }
+  for (var i = 0; i < results.length; i++) {
+    if (allItems.indexOf(results[i].name) === -1) {
+      collectedAll = false;
     }
 
-    // ultimate collector
-    if (collectedAll) {
-      achievements.ultimate = true;
+    if (collectionItems.indexOf(results[i].name) === -1) {
+      achievements.collection = false;
     }
 
-    console.log(achievements);
-    res.render('index', achievements);
-  });
+    // quantity overload
+    if (results[i].greaterThanOne === true) {
+      achievements.quantity = true;
+    }
+
+    // needle in a haystack
+    if (results[i].name === superRareItem) {
+      achievements.needle = true;
+    }
+  }
+
+  // hoarder
+  if (results.length >= 40) {
+    achievements.hoarder = true;
+  }
+
+  // ultimate collector
+  if (collectedAll) {
+    achievements.ultimate = true;
+  }
+
+  // console.log(achievements);
+  res.render('index', achievements);
 };

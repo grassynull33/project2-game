@@ -869,4 +869,40 @@
 	width: 80%;
 }
 
+#main > section.four h5
+{
+	background: #200122; /* For browsers that do not support gradients */
+	background: -webkit-linear-gradient(left top, #200122, #6f0000); /* For Safari 5.1 to 6.0 */
+	background: -o-linear-gradient(bottom right, #200122, #6f0000); /* For Opera 11.1 to 12.0 */
+	background: -moz-linear-gradient(bottom right, #200122, #6f0000); /* For Firefox 3.6 to 15 */
+	background: linear-gradient(to bottom right, #200122, #6f0000); /* Standard syntax */
+	display: inline;
+	padding: 0.7em;
+	line-height: 2.9em;
+}
 
+.rainbow {
+	background: linear-gradient(238deg, #fd8800, #fd008f, #9700fd, #003dfd, #05c7e6, #4bd58d);
+	background-size: 1200% 1200%;
+	-webkit-animation: rainbow 30s ease infinite;
+	animation: rainbow 30s ease infinite;
+}
+
+@-webkit-keyframes rainbow {
+  0% { background-position: 0% 50% }
+  50% { background-position: 100% 50% }
+  100% { background-position: 0% 50% }
+}
+@keyframes rainbow {
+  0% { background-position: 0% 50% }
+  50% { background-position: 100% 50% }
+  100% { background-position: 0% 50% }
+}
+
+.jSlots-wrapper {
+    overflow: hidden; /* to hide the magic */  
+    height: 2em; /* whatever the height of your list items are */
+    width: 2em;
+    display: inline-block; /* to size width correctly, can use float too, or width*/  
+    border: 2px solid rgb(136, 136, 136);
+}
