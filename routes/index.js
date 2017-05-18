@@ -5,6 +5,9 @@ var minigameController = require('../controllers/minigameController');
 var achievementController = require('../controllers/achievementController');
 var userController = require('../controllers/userController');
 
+var passport = require('../config/passport');
+var isAuthenticated = require('../config/middleware/isAuthenticated');
+
 var db = require('../models');
 
 var serviceAccount = require('../project2-4eb1dfda9ce9.json');
@@ -46,6 +49,15 @@ router.get('/',
   minigameController.checkMinigame,
   achievementController.checkAchievements
 );
+
+// login
+router.post('/login', passport.authenticate('local'), function (req, res) {
+    // Since we're doing a POST with javascript, we can't actually redirect that post into a GET request
+    // So we're sending the user back the route to the members page because the redirect will happen on the front end
+    // They won't get this or even be able to access this page if they aren't authed
+  // res.json('/');
+  res.send({redirect: '/'});
+});
 
 // Route for getting some data about our user to be used client side
 router.get('/api/user_data', function (req, res) {
