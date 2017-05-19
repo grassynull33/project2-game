@@ -4,6 +4,8 @@ var router = express.Router();
 var minigameController = require('../controllers/minigameController');
 var achievementController = require('../controllers/achievementController');
 var userController = require('../controllers/userController');
+var itemController = require('../controllers/itemController');
+var guestbookController = require('../controllers/guestbookController');
 var gravatar = require('gravatar');
 
 var passport = require('../config/passport');
@@ -48,7 +50,9 @@ router.get('/firebase', function (req, res) {
 
 router.get('/',
   minigameController.checkMinigame,
-  achievementController.checkAchievements
+  achievementController.checkAchievements,
+  itemController.checkItemsList,
+  guestbookController.checkGuestBook
 );
 
 router.get('/users/signup', function (req, res) {

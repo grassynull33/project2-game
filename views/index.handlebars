@@ -23,81 +23,7 @@
 					</section>
 					
 				<!-- Item Check List -->
-					<section id="items" class="two">
-						<div class="container">
-					
-							<header>
-								<h2>Items Check List</h2>
-							</header>
-
-							<div class="container">
-							    <br />
-								<div class="row">
-
-							        <div class="dual-list list-left col-md-5">
-							            <div class="well text-right">
-							                <div class="row">
-							                    <div class="col-md-10">
-							                        <div class="input-group">
-							                            <span class="input-group-addon glyphicon glyphicon-search"></span>
-							                            <input type="text" name="SearchDualList" class="form-control" placeholder="search" />
-							                        </div>
-							                    </div>
-							                    <div class="col-md-2">
-							                        <div class="btn-groupleft">
-							                            <a class="btn btn-default selector" title="select all"><i class="glyphicon glyphicon-unchecked"></i></a>
-							                        </div>
-							                    </div>
-							                </div>
-							                <ul class="list-group">
-							                    <li class="list-group-item">bootstrap-duallist <!-- <a href="https://github.com/bbilginn/bootstrap-duallist" target="_blank">github</a> --></li>
-							                    <li class="list-group-item">Dapibus ac facilisis in</li>
-							                    <li class="list-group-item">Morbi leo risus</li>
-							                    <li class="list-group-item">Porta ac consectetur ac</li>
-							                    <li class="list-group-item">Vestibulum at eros</li>
-							                </ul>
-							            </div>
-							        </div>
-
-							        <div class="list-arrows col-md-1 text-center">
-							            <button class="btn btn-default btn-sm move-left">
-							                <span class="glyphicon glyphicon-chevron-left"></span>
-							            </button>
-
-							            <button class="btn btn-default btn-sm move-right">
-							                <span class="glyphicon glyphicon-chevron-right"></span>
-							            </button>
-							        </div>
-
-							        <div class="dual-list list-right col-md-5">
-							            <div class="well">
-							                <div class="row">
-							                    <div class="col-md-2">
-							                        <div class="btn-groupright">
-							                            <a class="btn btn-default selector" title="select all"><i class="glyphicon glyphicon-unchecked"></i></a>
-							                        </div>
-							                    </div>
-							                    <div class="col-md-10">
-							                        <div class="input-group">
-							                            <input type="text" name="SearchDualList" class="form-control" placeholder="search" />
-							                            <span class="input-group-addon glyphicon glyphicon-search"></span>
-							                        </div>
-							                    </div>
-							                </div>
-							                <ul class="list-group">
-							                    <li class="list-group-item">Cras justo odio</li>
-							                    <li class="list-group-item">Dapibus ac facilisis in</li>
-							                    <li class="list-group-item">Morbi leo risus</li>
-							                    <li class="list-group-item">Porta ac consectetur ac</li>
-							                    <li class="list-group-item">Vestibulum at eros</li>
-							                </ul>
-							            </div>
-							        </div>
-
-								</div>
-							</div>
-						</div>
-					</section>
+					{{> itemslist }}
 
 				<!-- About Me -->
 					<section id="about" class="three">
@@ -180,40 +106,7 @@
 					</div>
 				</section>
 
-				<!-- Contact -->
-					<section id="contact" class="six">
-						<div class="container">
-
-							<header>
-								<h2>Contact</h2>
-							</header>
-
-							{{!-- <p>Elementum sem parturient nulla quam placerat viverra 
-							mauris non cum elit tempus ullamcorper dolor. Libero rutrum ut lacinia 
-							donec curae mus. Eleifend id porttitor ac ultricies lobortis sem nunc 
-							orci ridiculus faucibus a consectetur. Porttitor curae mauris urna mi dolor.</p> --}}
-							
-							<form method="post" action="#">
-								<div class="row 50%">
-									<div class="6u"><input type="text" name="name" placeholder="Name" /></div>
-									<div class="6u"><input type="text" name="email" placeholder="Email" /></div>
-								</div>
-								<div class="row 50%">
-									<div class="12u">
-										<textarea name="message" placeholder="Message"></textarea>
-									</div>
-								</div>
-								<div class="row">
-									<div class="12u">
-										<input type="submit" value="Send Message" />
-									</div>
-								</div>
-							</form>
-
-						</div>
-					</section>
-
-			</div>
+				{{> guestbook }}
 
 		<!-- Footer -->
 			<div id="footer">
