@@ -869,6 +869,37 @@
 	width: 80%;
 }
 
+#itemslist-styling {
+	font-family: ;
+	font-size: .75em;
+	color: white;
+	background-color: black;
+	text-align: left;
+}
+
+#items-procured-heading {
+	font-family: ;
+	font-size: 1.2em;
+	color: #ffffff;
+	text-align: center;
+	background-color: black;
+}
+
+.items-procured-subheading {
+	font-family: ;
+	font-size: .95em;
+	color: #ffffff;
+	text-align: left;
+	background-color: black;
+}
+
+#items-box {
+	opacity: .65;
+	width: 88%;
+	margin: auto;
+	background-color: black;
+}
+
 #main > section.four h5
 {
 	background: #200122; /* For browsers that do not support gradients */
