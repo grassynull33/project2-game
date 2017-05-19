@@ -12,7 +12,7 @@ $(document).ready(function () {
       $('#login-logout-link').attr('href', '/users/signout');
       $('#login-logout-link').attr('data-target', '#');
     } else {
-      $('#login-logout-link').html('<span class="icon fa-sign-in">Login</span>');
+      $('#login-logout-link').html('<span class="icon fa-sign-in">Login / Register</span>');
       $('#login-logout-link').attr('href', 'page-scroll');
       $('#login-logout-link').attr('data-target', '#login-modal');
     }
