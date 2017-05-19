@@ -3,6 +3,7 @@ var express = require('express');
 var router = express.Router();
 var minigameController = require('../controllers/minigameController');
 var achievementController = require('../controllers/achievementController');
+var wikiController = require('../controllers/wikiController');
 var userController = require('../controllers/userController');
 var itemController = require('../controllers/itemController');
 var guestbookController = require('../controllers/guestbookController');
@@ -49,10 +50,12 @@ router.get('/firebase', function (req, res) {
 });
 
 router.get('/',
+  itemController.checkItemsList,
   minigameController.checkMinigame,
   achievementController.checkAchievements,
-  itemController.checkItemsList,
-  guestbookController.checkGuestBook
+  wikiController.checkWiki
+  // ,
+  // guestbookController.checkGuestBook
 );
 
 router.get('/users/signout', function (req, res) {
@@ -98,9 +101,9 @@ router.post('/api/feedback/', function (req, res) {
     name: req.body.name,
     feedback: req.body.feedback,
     username: req.body.username
-  }).then(function() {
+  }).then(function () {
     res.redirect('/');
-  }).catch(function(err) {
+  }).catch(function (err) {
     res.json(err);
   });
 });

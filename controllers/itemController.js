@@ -8,7 +8,6 @@ exports.checkItemsList = function (req, res, next) {
   db.Item.findAll().then(function (results) {
     for (var i = 0; i < results.length; i++) {
       data.items.push(results[i].dataValues);
-      console.log(results[i].dataValues);
     }
 
     // console.log(data.items);

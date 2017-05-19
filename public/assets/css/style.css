@@ -936,7 +936,10 @@
 }
 
 .badge {
-	margin-top: 9px;
+	margin-top: -5px;
+	display: inline;
+	font-size: 13px;
+	padding: 2px 7px 3px 7px;
 }
 
 .achievement {
@@ -966,4 +969,51 @@
 
 .slot li {
 	font-size: 2em;
+}
+
+.wiki-list {
+
+}
+
+.wiki-list-item {
+	background: #EB5757;
+	background: -webkit-linear-gradient(left top, #EB5757, #000); /* For Safari 5.1 to 6.0 */
+	background: -o-linear-gradient(bottom right, #EB5757, #000); /* For Opera 11.1 to 12.0 */
+	background: -moz-linear-gradient(bottom right, #EB5757, #000); /* For Firefox 3.6 to 15 */
+	background: linear-gradient(to bottom right, #EB5757, #000); /* Standard syntax */
+	margin-bottom: 15px;
+	padding: 5px 20px 20px 20px;
+	-webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.45);
+	-moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.45);
+	box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.45);
+}
+
+.wiki-list-item h4 {
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	font-size: 0.7em;
+	display: inline;
+}
+
+.wiki-list-item p {
+	font-size: 0.65em;
+	line-height: 1.25;
+	margin-bottom: 0;
+	color: #eee;
+}
+
+.badge.legendary-false {
+	display: none;
+}
+
+.badge.legendary-true {
+	background: #26A30D;
+}
+
+.wiki-list-item.legendary-true {
+	background: #642B73;
+	background: -webkit-linear-gradient(left top, #642B73, #C6426E); /* For Safari 5.1 to 6.0 */
+	background: -o-linear-gradient(bottom right, #642B73, #C6426E); /* For Opera 11.1 to 12.0 */
+	background: -moz-linear-gradient(bottom right, #642B73, #C6426E); /* For Firefox 3.6 to 15 */
+	background: linear-gradient(to bottom right, #642B73, #C6426E); /* Standard syntax */
 }

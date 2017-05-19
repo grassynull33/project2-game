@@ -1,7 +1,7 @@
 var db = require('../models');
 
-exports.checkAchievements = function (req, res) {
-  // console.log('ACHIEVEMENTS MIDDLEWARE');
+exports.checkAchievements = function (req, res, next) {
+  console.log('ACHIEVEMENTS MIDDLEWARE');
 
   var superRareItem = 'Archon_Helm';
 
@@ -68,5 +68,8 @@ exports.checkAchievements = function (req, res) {
   }
 
   // console.log(achievements);
-  res.render('index', achievements);
+  // res.render('index', achievements);
+  res.locals.achievements = achievements;
+
+  next();
 };
