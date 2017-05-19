@@ -896,6 +896,16 @@
 	margin-top: 9px;
 }
 
+.achievement {
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	font-size: 0.9em;
+}
+
+.achievement-container p {
+	font-size: 0.8em;
+}
+
 .jSlots-wrapper {
     overflow: hidden;
     height: 2em; 
