@@ -930,10 +930,40 @@
   100% { background-position: 0% 50% }
 }
 
+.list-group-item.wiki {
+	font-size: 0.7em;
+	padding: 2px 5px;
+}
+
+.badge {
+	margin-top: 9px;
+}
+
+.achievement {
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	font-size: 0.9em;
+}
+
+.achievement-container p {
+	font-size: 0.8em;
+}
+
 .jSlots-wrapper {
-    overflow: hidden; /* to hide the magic */  
-    height: 2em; /* whatever the height of your list items are */
-    width: 2em;
-    display: inline-block; /* to size width correctly, can use float too, or width*/  
+    overflow: hidden;
+    height: 2em; 
+    width: 5em;
+    display: flex;
+    justify-content: center;
     border: 2px solid rgb(136, 136, 136);
+    background: #fff;
+}
+
+.slot-container {
+	display: flex;
+	justify-content: center;
+}
+
+.slot li {
+	font-size: 2em;
 }
