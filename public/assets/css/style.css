@@ -894,3 +894,12 @@
     display: inline-block; /* to size width correctly, can use float too, or width*/  
     border: 2px solid rgb(136, 136, 136);
 }
+
+.list-group-item {
+	font-size: 0.7em;
+	padding: 2px 5px;
+}
+
+.badge {
+	margin-top: 9px;
+}
