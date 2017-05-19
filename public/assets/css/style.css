@@ -946,6 +946,7 @@
 
 .slot li {
 	font-size: 2em;
+	margin: 0 0.12em;
 }
 
 .wiki-list {
@@ -998,7 +999,7 @@
 /*Achievement View*/
 .achievement {
 	border: 1px solid #000;
-	padding: 20px 20px 18px 20px;
+	padding: 20px 20px 15px 20px;
 	margin-bottom: 15px;
 	background: rgba(0, 0, 0, 0.3);
 	-webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.45);
@@ -1032,4 +1033,15 @@
 
 #items-total {
 	color: #fff;
+}
+
+#madewithunity {
+	width: 25%;
+	opacity: 0.5;
+	filter: alpha(opacity=50); /* For IE8 and earlier */
+}
+
+#madewithunity:hover {
+	opacity: 1;
+	filter: alpha(opacity=100); /* For IE8 and earlier */
 }
