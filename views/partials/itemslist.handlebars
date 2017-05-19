@@ -1,12 +1,33 @@
-<section id="items" class="two">
-						<div class="container">
-						<div class="list-group">
-  <a href="/" class="list-group-item active">
-    Items Procured
-  </a>
+{{!-- <section id="items" class="two">
+						<div class="container panel panel-default" id="items-box">
+						<div class="panel-heading" id="items-procured-heading">Items Procured</div>
+						<ul class="list-group">
+  
+    
   {{#each items}}
-  <a href="#" class="list-group-item">{{this.name}} ~ {{this.description}}</a>
+  <li class="list-group-item" id="itemslist-styling">{{this.name}} ~ {{this.description}}</li>
   {{/each}}
+</ul>
 </div>
+</section> --}}
+
+<section id="items" class="two">
+<div class="container panel panel-default" id="items-box">
+	<div class="panel-heading" id="items-procured-heading">Items Procured</div>
+<table class="table table-condensed">
+	{{!-- <thead id="items-procured-heading">Items Procured</thead> --}}
+<tr>
+	<th class="items-procured-subheading">Item</th>
+	<th class="items-procured-subheading">Description</th>
+</tr>
+{{#each items}}
+<tr id="itemslist-styling">
+	<td>{{this.name}}</td>
+	<td>{{this.description}}</td>
+</tr>
+{{/each}}
+</table>
 </div>
 </section>
+
+  

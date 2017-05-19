@@ -5,7 +5,7 @@ exports.checkGuestBook = function (req, res, next) {
     items: []
   };
 
-  db.Item.findAll().then(function (results) {
+  db.Guestbooks.findAll().then(function (results) {
     for (var i = 0; i < results.length; i++) {
       data.items.push(results[i].dataValues);
     }
@@ -24,3 +24,4 @@ exports.checkGuestBook = function (req, res, next) {
     next();
   });
 };
+
