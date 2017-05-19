@@ -85,3 +85,7 @@ oculussig_0915f9e3784f2b04.meta
 *.tga
 /3rd Party Samplers
 /Stamps
+
+*.unity
+/NewEnv
+/metadata
