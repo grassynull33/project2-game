@@ -1,9 +1,9 @@
 {
   "development": {
-    "username": "bnyy",
-    "password": "madewithunity",
-    "database": "test",
-    "host": "project2.covpga0ugu4r.us-west-2.rds.amazonaws.com",
+    "username": "root",
+    "password": "Passw0rd",
+    "database": "project2",
+    "host": "127.0.0.1",
     "dialect": "mysql"
   },
   "test": {

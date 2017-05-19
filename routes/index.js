@@ -55,6 +55,11 @@ router.get('/',
   guestbookController.checkGuestBook
 );
 
+router.get('/users/signout', function (req, res) {
+  req.logout();
+  res.redirect('/');
+});
+
 router.get('/users/signup', function (req, res) {
   res.render('registration', {
     layout: 'main-registration'
