@@ -996,7 +996,7 @@
 }
 
 .wiki-list-item p {
-	font-size: 0.65em;
+	font-size: 0.7em;
 	line-height: 1.25;
 	margin-bottom: 0;
 	color: #eee;
@@ -1007,7 +1007,7 @@
 }
 
 .badge.legendary-true {
-	background: #26A30D;
+	background: #0E9C18;
 }
 
 .wiki-list-item.legendary-true {

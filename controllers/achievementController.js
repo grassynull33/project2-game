@@ -1,58 +1,51 @@
 var db = require('../models');
 
-exports.checkAchievements = function (req, res, next) {
+exports.checkAchievements = function (req, res) {
   console.log('ACHIEVEMENTS MIDDLEWARE');
 
-  var superRareItem = 'Archon_Helm';
+  var superRareItem = 'Cha-Ching';
 
   var achievements = {
     hoarder: false,
     needle: false,
     quantity: false,
     collection: true,
-    ultimate: false
+    ultimate: true
   };
 
-  var data = {
-    items: []
-  };
+  var allItems = [];
 
-  var collectedAll = true;
-
-  var allItems = [
-    'Cube of Destruction',
-    'Archon_Helm',
-    'Icelandic Glacial Spikes',
-    'Popa Pola',
-    'W00T'
-    // fill in all possible items
-  ];
+  for (var i = 0; i < res.locals.wiki.length; i++) {
+    allItems.push(res.locals.wiki[i].name);
+  }
 
   // collection of related items achievement
   var collectionItems = [
-    'Baseball',
-    'Bat',
-    'Catcher\'s Mitt'
+    'Karunashian',
+    'Sky Yen',
+    'Yoonster',
+    'N. Miller'
   ];
 
   var results = res.locals.items;
+  var resultsItems = [];
 
   for (var i = 0; i < results.length; i++) {
-    if (allItems.indexOf(results[i].name) === -1) {
-      collectedAll = false;
-    }
+    resultsItems.push(results[i].name);
+  }
 
-    if (collectionItems.indexOf(results[i].name) === -1) {
+  for (var i = 0; i < results.length; i++) {
+    if (collectionItems.indexOf(results[i].name) === -1 && achievements.collection === true) {
       achievements.collection = false;
     }
 
     // quantity overload
-    if (results[i].greaterThanOne === true) {
+    if (results[i].greaterThanOne === true && achievements.quantity === false) {
       achievements.quantity = true;
     }
 
     // needle in a haystack
-    if (results[i].name === superRareItem) {
+    if (results[i].name === superRareItem && achievements.needle === false) {
       achievements.needle = true;
     }
   }
@@ -63,13 +56,15 @@ exports.checkAchievements = function (req, res, next) {
   }
 
   // ultimate collector
-  if (collectedAll) {
-    achievements.ultimate = true;
+  for (var i = 0; i < allItems.length; i++) {
+    if (resultsItems.indexOf(allItems[i]) === -1) {
+      achievements.ultimate = false;
+    }
   }
 
-  // console.log(achievements);
-  // res.render('index', achievements);
   res.locals.achievements = achievements;
 
-  next();
+  res.render('index', res.locals);
+
+  // next();
 };

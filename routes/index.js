@@ -52,8 +52,8 @@ router.get('/firebase', function (req, res) {
 router.get('/',
   itemController.checkItemsList,
   minigameController.checkMinigame,
-  achievementController.checkAchievements,
-  wikiController.checkWiki
+  wikiController.checkWiki,
+  achievementController.checkAchievements
   // ,
   // guestbookController.checkGuestBook
 );

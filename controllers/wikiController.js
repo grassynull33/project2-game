@@ -1,6 +1,6 @@
 var db = require('../models');
 
-exports.checkWiki = function (req, res) {
+exports.checkWiki = function (req, res, next) {
   var data = {
     wiki: []
   };
@@ -18,13 +18,14 @@ exports.checkWiki = function (req, res) {
     res.locals.wiki = data.wiki;
     res.locals.wikiCount = data.wiki.length;
 
-    res.render('index', res.locals);
-    // next();
+    // res.render('index', res.locals);
+
+    next();
   }).catch(function (error) {
     console.log(error);
 
     console.log('wiki controller error');
 
-    // next();
+    next();
   });
 };
