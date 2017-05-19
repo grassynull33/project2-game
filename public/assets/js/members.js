@@ -8,7 +8,7 @@ $(document).ready(function () {
     $('#profile-pic').attr('src', data.gravatar);
 
     if (data.username) {
-      $('#login-logout-link').html('<span class="icon fa-sign-in">Logout</span>');
+      $('#login-logout-link').html('<span class="icon fa-sign-out">Logout</span>');
       $('#login-logout-link').attr('href', '/users/signout');
       $('#login-logout-link').attr('data-target', '#');
     } else {
