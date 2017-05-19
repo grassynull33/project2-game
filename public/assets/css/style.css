@@ -887,7 +887,7 @@
   100% { background-position: 0% 50% }
 }
 
-.list-group-item {
+.list-group-item.wiki {
 	font-size: 0.7em;
 	padding: 2px 5px;
 }
