@@ -847,14 +847,6 @@
 	margin-left:250px;
 }*/
 
-.achievement-true {
-	color: #33FF00;
-}
-
-.achievement-false {
-	color: #FFCC33;
-}
-
 #main > section.six
 {
 	background-color: #333;
@@ -930,26 +922,11 @@
   100% { background-position: 0% 50% }
 }
 
-.list-group-item.wiki {
-	font-size: 0.7em;
-	padding: 2px 5px;
-}
-
 .badge {
 	margin-top: -5px;
 	display: inline;
 	font-size: 13px;
 	padding: 2px 7px 3px 7px;
-}
-
-.achievement {
-	text-transform: uppercase;
-	letter-spacing: 2px;
-	font-size: 0.9em;
-}
-
-.achievement-container p {
-	font-size: 0.8em;
 }
 
 .jSlots-wrapper {
@@ -1016,4 +993,43 @@
 	background: -o-linear-gradient(bottom right, #642B73, #C6426E); /* For Opera 11.1 to 12.0 */
 	background: -moz-linear-gradient(bottom right, #642B73, #C6426E); /* For Firefox 3.6 to 15 */
 	background: linear-gradient(to bottom right, #642B73, #C6426E); /* Standard syntax */
+}
+
+/*Achievement View*/
+.achievement {
+	border: 1px solid #000;
+	padding: 20px 20px 18px 20px;
+	margin-bottom: 15px;
+	background: rgba(0, 0, 0, 0.3);
+	-webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.45);
+	-moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.45);
+	box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.45);
+}
+
+.achievement h4 {
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	font-size: 0.9em;
+}
+
+.achievement p {
+	font-size: 0.8em;
+	margin: 0;
+}
+
+.achievement-true {
+	background: rgba(51, 204, 51, 0.20);
+	border: 1px solid rgba(51, 204, 51, 0.20);
+}
+
+.achievement-true h4 {
+	color: #33FF00;
+}
+
+.achievement-true p {
+	color: #29a329;
+}
+
+#items-total {
+	color: #fff;
 }
