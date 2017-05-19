@@ -86,6 +86,27 @@ router.post('/users/signup', function (req, res) {
   });
 });
 
+router.post('/api/feedback/', function (req, res) {
+  console.log(req.body);
+  db.Guestbook.create({
+    name: req.body.name,
+    feedback: req.body.feedback,
+    username: req.body.username
+  }).then(function() {
+    res.redirect('/');
+  }).catch(function(err) {
+    res.json(err);
+  });
+});
+
+router.get('api/feedback/', function (req, res) {
+  res.json({
+    name: req.body.name,
+    feedback: req.body.feedback,
+    username: req.body.username
+  });
+});
+
 // login
 router.post('/users/login', passport.authenticate('local'), function (req, res) {
     // Since we're doing a POST with javascript, we can't actually redirect that post into a GET request

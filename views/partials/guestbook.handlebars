@@ -11,24 +11,22 @@
 							donec curae mus. Eleifend id porttitor ac ultricies lobortis sem nunc 
 							orci ridiculus faucibus a consectetur. Porttitor curae mauris urna mi dolor.</p> --}}
 							
-							<form method="post" action="#">
+							<form id="guestbook">
 								<div class="row 50%">
-									<div class="6u"><input type="text" name="name" placeholder="Name" /></div>
-									<div class="6u"><input type="text" name="email" placeholder="Username (optional)" /></div>
+									<div class="6u"><input type="text" name="name" placeholder="Name" id="name" /></div>
+									<div class="6u"><input type="text" name="username" id="username" placeholder="Username (optional)" /></div>
 								</div>
 								<div class="row 50%">
 									<div class="12u">
-										<textarea name="message" placeholder="We are eager to receive any feedback that you might have."></textarea>
+										<textarea id="feedback" name="feedback" placeholder="We are eager to receive any feedback that you might have."></textarea>
 									</div>
 								</div>
 								<div class="row">
 									<div class="12u">
-										<input type="submit" value="Submit Feedback" />
+										<input type="submit" id="guestbookSubmit"/>
 									</div>
 								</div>
 							</form>
 
 						</div>
 					</section>
-
-			</div>
