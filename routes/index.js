@@ -6,6 +6,7 @@ var achievementController = require('../controllers/achievementController');
 var userController = require('../controllers/userController');
 var itemController = require('../controllers/itemController');
 var guestbookController = require('../controllers/guestbookController');
+var gravatar = require('gravatar');
 
 var passport = require('../config/passport');
 var isAuthenticated = require('../config/middleware/isAuthenticated');
@@ -104,10 +105,13 @@ router.get('/api/user_data', function (req, res) {
   } else {
     // Otherwise send back the user's email and id
     // Sending back a password, even a hashed password, isn't a good idea
+    var url = gravatar.url(req.user.email, {s: '200', r: 'r', d: 'mm'});
+
     res.json({
       email: req.user.email,
       id: req.user.id,
-      username: req.user.username
+      username: req.user.username,
+      gravatar: url
     });
   }
 });

@@ -4,5 +4,7 @@ $(document).ready(function () {
   $.get('/api/user_data').then(function (data) {
     $('#member').text(data.username);
     $('#email').text(data.email);
+
+    $('#profile-pic').attr('src', data.gravatar);
   });
 });
