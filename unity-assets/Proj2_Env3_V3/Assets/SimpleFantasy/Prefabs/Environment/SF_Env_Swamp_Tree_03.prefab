@@ -10,6 +10,7 @@ GameObject:
   - component: {fileID: 421214}
   - component: {fileID: 3374030}
   - component: {fileID: 2361980}
+  - component: {fileID: 136568984131834836}
   m_Layer: 0
   m_Name: SF_Env_Swamp_Tree_03
   m_TagString: Untagged
@@ -80,3 +81,16 @@ Prefab:
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 101014}
   m_IsPrefabParent: 1
+--- !u!136 &136568984131834836
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 101014}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 1.278305
+  m_Height: 7.7633452
+  m_Direction: 1
+  m_Center: {x: 0, y: 3.8816726, z: 0}
