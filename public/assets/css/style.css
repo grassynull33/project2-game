@@ -1075,3 +1075,12 @@
 #cannot-buy {
 	display: none;
 }
+
+#brand-logo-holder {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	margin-top: 20px;
+	height: 200px;
+}
