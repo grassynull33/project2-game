@@ -1,21 +1,21 @@
 {
   "development": {
-    "username": "bnyy",
-    "password": "madewithunity",
-    "database": "equilibrium_db",
-    "host": "project2.covpga0ugu4r.us-west-2.rds.amazonaws.com",
+    "username": "root",
+    "password": "password",
+    "database": "database_production",
+    "host": "127.0.0.1",
     "dialect": "mysql"
   },
   "test": {
     "username": "root",
-    "password": "Nm220909@#",
-    "database": "database_test",
+    "password": "password",
+    "database": "database_production",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
   "production": {
     "username": "root",
-    "password": "Nm220909@#",
+    "password": "password",
     "database": "database_production",
     "host": "127.0.0.1",
     "dialect": "mysql"

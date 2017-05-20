@@ -71,3 +71,5 @@ sysinfo.txt
 # Builds
 *.apk
 *.unitypackage
+
+.env
