@@ -1,7 +1,7 @@
 $(document).ready(function() {
 
     // links to our images in this image array.
-    var images = ["assets/images/equili-logo-black-bg.png", "assets/images/equili-logo02.png", "assets/images/equili-logo-black-bg.png", "assets/images/equili-logo02.png"];
+    var images = ["assets/images/intro_script_1b.png", "assets/images/intro_script_2.png", "assets/images/intro_script_3a.png", "assets/images/equili-logo-black-bg.png"];
 
     // Variable showImage will hold the setInterval when we start the slideshow
     var showImage;
@@ -19,6 +19,9 @@ $(document).ready(function() {
         //  TODO: Increment the count by 1.
 
         count++;
+
+        // TODO: Show the loading gif in the "image-holder" div.
+  $("#brand-logo-holder").html("<img src='assets/images/intro_script_placeholder2.png' id='brand-logo'/>");
 
         setTimeout(displayImage, 0);
 
