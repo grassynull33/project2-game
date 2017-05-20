@@ -15,7 +15,7 @@ var isAuthenticated = require('../config/middleware/isAuthenticated');
 
 var db = require('../models');
 
-var serviceAccount = require('../project2-4eb1dfda9ce9.json');
+var serviceAccount = require('../unity-93b07-firebase-adminsdk-qly54-4c10ba74db.json');
 
 firebase.initializeApp({
   credential: firebase.credential.cert(serviceAccount),
