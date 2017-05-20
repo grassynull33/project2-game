@@ -1,32 +1,81 @@
-# Project #2
+# Equilibrium
 
-Short project description goes here
+A Web-based first person virtual reality adventure game with real-time database connection and associated web page application. Firebase connection integrated with MySQL database and Sequelize, Object Relational Mapping.  Website application functionality works closely with encrypted C# data.  
 
 ## Screenshots
 Include a one or two screenshots of main UI/UX points of your app and how it solves a problem
 
 ## Technologies Used
 You can give a brief listing of the technologies you've learned and applied here
+- Unity
+- MySQL
+- Sequelize
+- HTML5/CSS3
+- Bootstrap
+- JavaScript
+- jQuery
 - Node.js
 - Express
 - Handblebars
-- MySQL
-- Sequelize
+- Three.js
+- Collada
+- C#
+- Firebase (SDK)
+- Android (SDK)
+- Oculus (SDK)
+- Samsung Gear VR
+- AR
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
+Go to this link to start the web application https://morning-gorge-48785.herokuapp.com/  
+
+To play the game:
+- WASD-Standard controls for Windows/Mac/Linux platforms and press E for interacting with objects. Tab for toggling inventory view.
+- VR Only: Look down at a 30-degree angle to move forward. Look up at a 30-degree angle to stop movement. Operate controls with either Samsung Gear VR’s headset control-pad, ‘tap,’ to interact with object. Press bluetooth controller to pick up item.
 
 ### Prerequisities
 
-What to install and how for local development and testing purposes
+What to install and how for local development and testing purposes:
 
-```
-- node.js: visit node.js and download...
-- mongodb: npm install -g mongodb
-- mysqldb: brew install mysql
-- jasmine: npm i -g jasmine
-```
+#### For Game:
+
+For Windows/MacOSX/Linux:
+
+- Minimum Requirements:
+OS: Windows 7 and higher (64 bit only) / Mac OS X 10.5 / Ubuntu Linux, version 10.10 or later
+Processor: AMD Phenom II X2 550, 3.1GHz | Intel Pentium G4400, 3.30GHz
+Memory: 1 GB RAM
+Graphics: Integrated Graphics Card
+DirectX: Version 9+
+Network: Local
+Additional Notes: For Windows 7, service pack 1 is required
+
+VR:
+- Minimum Requirements:
+Samsung Gear VR
+All requirements that come with Gear VR (Compatible Devices Only)
+
+#### For Web-App:
+Dependencies:
+- bcrypt-nodejs
+- body-parser
+- cookie-parser
+- express
+- express-handlebars
+- express-session
+- firebase
+- firebase-admin
+- gravatar
+- method-override
+- morgan
+- mysql
+- node-gravatar
+- nodemon
+- passport
+- passport-local
+- sequelize
+- sequelize-cli
 
 ## Running the tests
 
@@ -59,10 +108,10 @@ function awesomeThing() {
 
 ## Authors
 
-* **John Doe** - *Initial work* - [John Doe](https://github.com)
-* **John Doe** - *Initial work* - [John Doe](https://github.com)
-* **John Doe** - *Initial work* - [John Doe](https://github.com)
-* **John Doe** - *Initial work* - [John Doe](https://github.com)
+* **Brandon Chang** - *Initial work* - [https://github.com/karunashi]
+* **Yoon Lee** - *Initial work* - [https://github.com/yoonslee]
+* **Yen La** - *Initial work* - [https://github.com/yenla]
+* **Nathan Miller** - *Initial Work* - [https://github.com/nathanmiller9]
 
 See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
 
