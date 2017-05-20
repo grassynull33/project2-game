@@ -3,7 +3,7 @@ $(document).ready(function () {
   // and updates the HTML on the page
   $.get('/api/user_data').then(function (data) {
     $('#member').text(data.username);
-    $('#email').text(data.email);
+    $('#creditAmount').text(data.credits);
 
     $('#profile-pic').attr('src', data.gravatar);
 
@@ -16,6 +16,17 @@ $(document).ready(function () {
       $('#login-logout-link').attr('href', 'page-scroll');
       $('#login-logout-link').attr('data-target', '#login-modal');
     }
+
+    $(document).on('click', '.buyBtn', function () {
+      $.get('/api/user_data').then(function (data) {
+        if (!data.username) {
+          $('#cannot-buy').text('You must be logged in to purchase items!');
+          $('#cannot-buy').show();
+        } else {
+
+        }
+      });
+    });
   });
 
   // $.get('/users/signout').then(function () {

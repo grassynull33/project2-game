@@ -6,6 +6,7 @@ var achievementController = require('../controllers/achievementController');
 var wikiController = require('../controllers/wikiController');
 var userController = require('../controllers/userController');
 var itemController = require('../controllers/itemController');
+var storeItemController = require('../controllers/storeItemController');
 var guestbookController = require('../controllers/guestbookController');
 var gravatar = require('gravatar');
 
@@ -53,7 +54,8 @@ router.get('/',
   itemController.checkItemsList,
   minigameController.checkMinigame,
   wikiController.checkWiki,
-  achievementController.checkAchievements
+  achievementController.checkAchievements,
+  storeItemController.checkStoreItems
   // ,
   // guestbookController.checkGuestBook
 );
@@ -83,7 +85,8 @@ router.post('/users/signup', function (req, res) {
       db.User.create({
         username: req.body.username,
         email: req.body.email,
-        password: req.body.password
+        password: req.body.password,
+        credits: 200
       }).then(function () {
         // res.send({redirect: '/'});
         res.redirect(307, '/users/login');
@@ -140,7 +143,8 @@ router.get('/api/user_data', function (req, res) {
       email: req.user.email,
       id: req.user.id,
       username: req.user.username,
-      gravatar: url
+      gravatar: url,
+      credits: req.user.credits
     });
   }
 });

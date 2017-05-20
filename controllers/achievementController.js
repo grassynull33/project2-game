@@ -1,6 +1,6 @@
 var db = require('../models');
 
-exports.checkAchievements = function (req, res) {
+exports.checkAchievements = function (req, res, next) {
   console.log('ACHIEVEMENTS MIDDLEWARE');
 
   var superRareItem = 'Cha-Ching';
@@ -64,7 +64,5 @@ exports.checkAchievements = function (req, res) {
 
   res.locals.achievements = achievements;
 
-  res.render('index', res.locals);
-
-  // next();
+  next();
 };
