@@ -6,12 +6,12 @@ PlayerSettings:
   serializedVersion: 11
   productGUID: 66e59762410ce6745945cc8ef216e76f
   AndroidProfiler: 0
-  defaultScreenOrientation: 4
+  defaultScreenOrientation: 3
   targetDevice: 2
   useOnDemandResources: 0
   accelerometerFrequency: 60
-  companyName: DefaultCompany
-  productName: Proj2_Env3_V1
+  companyName: BNYY
+  productName: BNYY_VR_Proj_Beta3
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13333334, g: 0.17254902, b: 0.21176471, a: 1}
@@ -20,7 +20,7 @@ PlayerSettings:
   m_SplashScreenOverlayOpacity: 1
   m_SplashScreenAnimation: 1
   m_SplashScreenLogoStyle: 1
-  m_SplashScreenDrawMode: 0
+  m_SplashScreenDrawMode: 1
   m_SplashScreenBackgroundAnimationZoom: 1
   m_SplashScreenLogoAnimationZoom: 1
   m_SplashScreenBackgroundLandscapeAspect: 1
@@ -38,21 +38,24 @@ PlayerSettings:
     width: 1
     height: 1
   m_SplashScreenLogos:
+  - logo: {fileID: 10404, guid: 0000000000000000e000000000000000, type: 0}
+    duration: 2
   - logo: {fileID: 21300000, guid: 9eed1a261366ec44eaa18c2e41a08955, type: 3}
-    duration: 3
+    duration: 2
   - logo: {fileID: 21300000, guid: 9877a0df8ad686646abeaf87ec559da1, type: 3}
-    duration: 3
+    duration: 2
   - logo: {fileID: 21300000, guid: 4af1d8b61c5bb9942bc69de38f99bbb7, type: 3}
-    duration: 3
+    duration: 2
   - logo: {fileID: 21300000, guid: 53b0e494b58b1e641b7f5fcef3ea90b0, type: 3}
-    duration: 3
+    duration: 2
   - logo: {fileID: 21300000, guid: 0f469cbb709ab3342be203268f12c767, type: 3}
-    duration: 3
+    duration: 2
   - logo: {fileID: 21300000, guid: 9b2108e9a44daa64187dd18012063d5e, type: 3}
-    duration: 3
+    duration: 2
   m_SplashScreenBackgroundLandscape: {fileID: 0}
   m_SplashScreenBackgroundPortrait: {fileID: 0}
-  m_VirtualRealitySplashScreen: {fileID: 0}
+  m_VirtualRealitySplashScreen: {fileID: 2800000, guid: 4af1d8b61c5bb9942bc69de38f99bbb7,
+    type: 3}
   m_HolographicTrackingLossScreen: {fileID: 0}
   defaultScreenWidth: 1024
   defaultScreenHeight: 768
@@ -61,7 +64,7 @@ PlayerSettings:
   m_StereoRenderingPath: 0
   m_ActiveColorSpace: 0
   m_MTRendering: 1
-  m_MobileMTRendering: 0
+  m_MobileMTRendering: 1
   m_StackTraceTypes: 010000000100000001000000010000000100000001000000
   iosShowActivityIndicatorOnLoading: -1
   androidShowActivityIndicatorOnLoading: -1
@@ -130,7 +133,7 @@ PlayerSettings:
     16:10: 1
     16:9: 1
     Others: 1
-  bundleVersion: 1.0
+  bundleVersion: 1.337
   preloadedAssets: []
   metroInputSource: 0
   m_HolographicPauseOnTrackingLoss: 1
@@ -147,12 +150,13 @@ PlayerSettings:
       depthFormat: 1
   protectGraphicsMemory: 0
   useHDRDisplay: 0
-  applicationIdentifier: {}
+  applicationIdentifier:
+    Android: com.UCLA.Brandon
   buildNumber: {}
-  AndroidBundleVersionCode: 1
-  AndroidMinSdkVersion: 16
+  AndroidBundleVersionCode: 3
+  AndroidMinSdkVersion: 23
   AndroidTargetSdkVersion: 0
-  AndroidPreferredInstallLocation: 1
+  AndroidPreferredInstallLocation: 0
   aotOptions: 
   stripEngineCode: 1
   iPhoneStrippingLevel: 0
@@ -236,7 +240,11 @@ PlayerSettings:
   m_BuildTargetIcons: []
   m_BuildTargetBatching: []
   m_BuildTargetGraphicsAPIs: []
-  m_BuildTargetVRSettings: []
+  m_BuildTargetVRSettings:
+  - m_BuildTarget: Android
+    m_Enabled: 1
+    m_Devices:
+    - Oculus
   openGLRequireES31: 0
   openGLRequireES31AEP: 0
   webPlayerTemplate: APPLICATION:Default
@@ -517,6 +525,7 @@ PlayerSettings:
   incrementalIl2cppBuild: {}
   additionalIl2CppArgs: 
   apiCompatibilityLevelPerPlatform:
+    Android: 1
     Standalone: 1
   m_RenderingPath: 1
   m_MobileRenderingPath: 1
