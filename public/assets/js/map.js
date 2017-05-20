@@ -1,4 +1,4 @@
-$(document).ready(function () {
+$("#mapLoad").click(function () {
 var scene, camera, renderer;
 
 
@@ -12,18 +12,18 @@ var scene, camera, renderer;
       scene = new THREE.Scene();
       var WIDTH = window.innerWidth,
           HEIGHT = window.innerHeight;
-console.log("4")
+
       // Create a renderer and add it to the DOM.
       renderer = new THREE.WebGLRenderer();
       renderer.setSize(WIDTH, HEIGHT);
       $("#myCanvas").append(renderer.domElement);
       // container.appendChild(renderer.domElement);
-console.log("1")
+
       // Create a camera, zoom it out from the model a bit, and add it to the scene.
       camera = new THREE.PerspectiveCamera(45, WIDTH / HEIGHT, 0.1, 20000);
       camera.position.set(486,466.60,-55.60);
       scene.add(camera);
-console.log("2")
+
       // Create an event listener that resizes the renderer with the browser window.
       window.addEventListener('resize', function() {
         var WIDTH = window.innerWidth,
@@ -32,13 +32,11 @@ console.log("2")
         camera.aspect = WIDTH / HEIGHT;
         camera.updateProjectionMatrix();
       });
-console.log("3")
+
       // Load in the mesh and add it to the scene.
       var loader = new THREE.ObjectLoader();
-      console.log("5")
     loader.load('assets/js/model2.json', function (object) {
     scene.add(object);
-    console.log("6")
 });
 
 

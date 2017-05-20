@@ -1,8 +1,8 @@
 canvas {
-	width: 1400px;
-	height: 442px;
-}
-#myCanvas {
 	width: 100%;
-	height: 500px;
+	height: 100%;
 }
+/*#myCanvas {
+	width: 100%;
+	height: 100%;
+}*/
