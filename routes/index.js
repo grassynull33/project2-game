@@ -7,7 +7,6 @@ var wikiController = require('../controllers/wikiController');
 var userController = require('../controllers/userController');
 var itemController = require('../controllers/itemController');
 var storeItemController = require('../controllers/storeItemController');
-var guestbookController = require('../controllers/guestbookController');
 var gravatar = require('gravatar');
 
 var passport = require('../config/passport');
@@ -59,8 +58,6 @@ router.get('/',
   wikiController.checkWiki,
   achievementController.checkAchievements,
   storeItemController.checkStoreItems
-  // ,
-  // guestbookController.checkGuestBook
 );
 
 router.get('/users/signout', function (req, res) {
