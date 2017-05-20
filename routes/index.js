@@ -38,8 +38,6 @@ router.get('/firebase', function (req, res) {
   var ref = fireDB.ref('Inventory');
 
   ref.on('child_added', function (snapshot) {
-    // console.log(snapshot.key, snapshot.val().ItemName);
-
     db.Item.create({
       name: snapshot.val().ItemName,
       description: snapshot.val().Description,
@@ -51,13 +49,7 @@ router.get('/firebase', function (req, res) {
       isCraftable: snapshot.val().IsCraftable
     }).catch(function (err) {
       console.log(err);
-      console.log('duplicate: did not insert');
     });
-      // .then(function () {
-      //   res.send({redirect: '/'});
-      // }).catch(function (err) {
-      //   res.json(err);
-      // });
   });
 });
 
