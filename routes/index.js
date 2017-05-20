@@ -19,7 +19,7 @@ var serviceAccount = require('../unity-93b07-firebase-adminsdk-qly54-4c10ba74db.
 
 firebase.initializeApp({
   credential: firebase.credential.cert(serviceAccount),
-  databaseURL: 'https://project2-e15c9.firebaseio.com'
+  databaseURL: 'https://unity-93b07.firebaseio.com'
 });
 
 router.get('/firebase', function (req, res) {
