@@ -1,9 +1,6 @@
 $(document).ready(function () {
+var scene, camera, renderer;
 
-  // $("#test").click(function(event) {
-    // Set up the scene, camera, and renderer as global variables.
-    console.log("Testing")
-    var scene, camera, renderer;
 
     init();
     animate();
@@ -15,17 +12,18 @@ $(document).ready(function () {
       scene = new THREE.Scene();
       var WIDTH = window.innerWidth,
           HEIGHT = window.innerHeight;
-
+console.log("4")
       // Create a renderer and add it to the DOM.
-      renderer = new THREE.WebGLRenderer({antialias:true});
+      renderer = new THREE.WebGLRenderer();
       renderer.setSize(WIDTH, HEIGHT);
-      document.body.appendChild(renderer.domElement);
-
+      $("#myCanvas").append(renderer.domElement);
+      // container.appendChild(renderer.domElement);
+console.log("1")
       // Create a camera, zoom it out from the model a bit, and add it to the scene.
       camera = new THREE.PerspectiveCamera(45, WIDTH / HEIGHT, 0.1, 20000);
       camera.position.set(486,466.60,-55.60);
       scene.add(camera);
-
+console.log("2")
       // Create an event listener that resizes the renderer with the browser window.
       window.addEventListener('resize', function() {
         var WIDTH = window.innerWidth,
@@ -34,11 +32,13 @@ $(document).ready(function () {
         camera.aspect = WIDTH / HEIGHT;
         camera.updateProjectionMatrix();
       });
-
+console.log("3")
       // Load in the mesh and add it to the scene.
       var loader = new THREE.ObjectLoader();
-loader.load('model2.json', function (object) {
+      console.log("5")
+    loader.load('assets/js/model2.json', function (object) {
     scene.add(object);
+    console.log("6")
 });
 
 
@@ -59,5 +59,4 @@ loader.load('model2.json', function (object) {
       controls.update();
 
     }
-  // } Click function test
 });
