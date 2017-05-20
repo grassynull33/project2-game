@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<COLLADA xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" version="1.4.1" xmlns="http://www.collada.org/2005/11/COLLADASchema">
+  <asset>
+    <contributor>
+      <author>Brandon</author>
+      <authoring_tool>Unity3D 5.6.0f3 - COLLADA exporter v1.6.2</authoring_tool>
+      <comments>Project2Test</comments>
+      <copyright>GPL</copyright>
+      <source_data>NewEnv.unity</source_data>
+    </contributor>
+    <created>2017-05-19T16:13:45.6358562-07:00</created>
+    <modified>2017-05-19T16:13:45.6358562-07:00</modified>
+    <unit meter="1" name="meter" />
+    <up_axis>Y_UP</up_axis>
+  </asset>
+  <library_lights>
+    <light id="ambient">
+      <technique_common>
+        <ambient>
+          <color>0.212000 0.227000 0.259000</color>
+        </ambient>
+      </technique_common>
+    </light>
+  </library_lights>
+  <library_visual_scenes>
+    <visual_scene id="collada_scene">
+      <node id="ambient_node">
+        <instance_light url="#ambient" />
+      </node>
+      <node id="_36840" name="CraftingTab">
+        <node id="_-11148" name="Text">
+          <matrix sid="matrix">
+
+1.000000 0.000000 0.000000 0.000000 
+0.000000 1.000000 0.000000 0.000000 
+0.000000 0.000000 1.000000 0.000000 
+0.000000 0.000000 0.000000 1.000000</matrix>
+        </node>
+      </node>
+    </visual_scene>
+  </library_visual_scenes>
+  <scene>
+    <instance_visual_scene url="#collada_scene" />
+  </scene>
+</COLLADA>

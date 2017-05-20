@@ -1,0 +1,63 @@
+<COLLADA_ExportSettingsRoot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <presets>
+    <COLLADA_ExportSettings>
+      <presetName>Default</presetName>
+      <Author />
+      <Comments />
+      <Copyright />
+      <UnitInMeter>1</UnitInMeter>
+      <UnitName>meter</UnitName>
+      <fixNamesToValidXML>true</fixNamesToValidXML>
+      <exportChoice>EntireScene</exportChoice>
+      <splitPrefabsIntoFiles>false</splitPrefabsIntoFiles>
+      <prefabsFolder>prefabs</prefabsFolder>
+      <copyTextures>true</copyTextures>
+      <texturesFolder>textures</texturesFolder>
+      <textureConversionChoice>ConvertImagesToPNG</textureConversionChoice>
+      <exportUVs>ExportFirstUVSet</exportUVs>
+      <exportCubeMaps>false</exportCubeMaps>
+      <exportNormalMaps>false</exportNormalMaps>
+      <bakeTransformsAsMatrices>true</bakeTransformsAsMatrices>
+      <exportCameras>false</exportCameras>
+      <exportLights>false</exportLights>
+      <exportAudio>false</exportAudio>
+      <audioFolder>audio</audioFolder>
+      <exportParticles>false</exportParticles>
+      <exportAnimations>false</exportAnimations>
+      <animationTarget>MultipleTargetsPerClip</animationTarget>
+      <exportSingleClip>false</exportSingleClip>
+      <singleClipName />
+      <exportOnlyKeyframes>false</exportOnlyKeyframes>
+      <eliminateSingleKeys>true</eliminateSingleKeys>
+      <exportSkins>ExportSkinsAsControllers</exportSkins>
+      <exportJoints>MarkSkeletonHierarchyAsJoints</exportJoints>
+      <exportLightmaps>false</exportLightmaps>
+      <lightMapCoeficient>2</lightMapCoeficient>
+      <exportLightMapsOptions>SaveLightmapAsRGB24</exportLightMapsOptions>
+      <exportLightMapsUV>DuplicateGeometries</exportLightMapsUV>
+      <exportTerrain>false</exportTerrain>
+      <shareEffects>false</shareEffects>
+      <terrainSampling>0.25</terrainSampling>
+      <terrainTextures>SingleUVApproximation</terrainTextures>
+      <exportTrees>true</exportTrees>
+      <exportColliders>false</exportColliders>
+      <exportRigidbodies>false</exportRigidbodies>
+      <moveRigidbodyTargetToSceneRoot>true</moveRigidbodyTargetToSceneRoot>
+      <invertShininess>true</invertShininess>
+      <pruneIdentityTransforms>false</pruneIdentityTransforms>
+      <splitPrefabsOptions>ExportEverything</splitPrefabsOptions>
+      <splitPrefabsChangeOptions>BakeLocalModificationsAndAlwaysDuplicate</splitPrefabsChangeOptions>
+      <createUUID>false</createUUID>
+      <compress>false</compress>
+      <eliminateDuplicateKeys>true</eliminateDuplicateKeys>
+      <approxDist>0.01</approxDist>
+      <approxAngle>0.01</approxAngle>
+      <approxScale>0.01</approxScale>
+      <exportMorphs>false</exportMorphs>
+      <blendShapeOptions>BakeBlendWeights</blendShapeOptions>
+      <exportTangents>false</exportTangents>
+      <exportBinormals>false</exportBinormals>
+      <tangentOptions>WithoutW</tangentOptions>
+    </COLLADA_ExportSettings>
+  </presets>
+</COLLADA_ExportSettingsRoot>

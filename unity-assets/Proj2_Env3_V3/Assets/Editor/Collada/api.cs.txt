@@ -1,0 +1,179 @@
+﻿// EXAMPLE BATCH EXPORT SCRIPT
+// RENAME TO .CS and extend this script to do something with the COLLADA object returned by exportDAE()
+
+
+using System; //Math
+using System.Collections;
+using System.Collections.Generic; //List<T>
+using UnityEditor;
+using COLLADA_1_4;
+using Settings = COLLADA_ExportSettings;
+using UnityEngine;
+
+// create and save XML file
+using System.IO;
+using System.Xml;
+using System.Xml.Serialization;
+using System.Text;
+
+
+public  class MyExporter : EditorWindow
+{
+
+	static Settings settings = new Settings ();
+	static private string savedFile = "model.dae";
+	
+	[MenuItem("File/MyExporter")]
+	static void Init()
+	{
+		MyExporter window = (MyExporter)EditorWindow.GetWindow<MyExporter> ("my exporter");
+		window.Show();
+	}
+	void OnGUI()
+	{
+		if (GUILayout.Button("Export!"))
+		{
+			COLLADA collada = exportDAE(getRoot());
+			// now save, or do something else
+			//
+			// Type[] extraTypes = new Type[] { typeof(technique_fl4re) };
+			// XmlSerializer serializer = new XmlSerializer(typeof(COLLADA), null, extraTypes, null, "http://www.collada.org/2005/11/COLLADASchema");
+			// XmlTextWriter writer = new NoTypeAttributeXmlWriter(path, Encoding.UTF8);
+			// serializer.Serialize(writer, collada);
+		}
+	}
+	private List<Transform> getRoot()
+	{
+		List<Transform> root = new List<Transform>();
+		if (settings.exportChoice == Settings.ExportChoice.SelectionOnly)
+		{
+			root.AddRange(Selection.GetTransforms(SelectionMode.TopLevel));
+			if (root[0] != null)
+				savedFile = root[0].name;
+		}
+		else
+		{
+			object[] objs = FindObjectsOfType(typeof(Transform));
+			
+			foreach (Transform g in objs)
+			{
+				if (!g.parent) root.Add(g);
+			}
+			string filename = Path.GetFileName(EditorApplication.currentScene);
+			int extIndex = filename.LastIndexOf('.');
+			
+			if (extIndex != -1)
+				
+				savedFile = Path.GetFileName(EditorApplication.currentScene).Substring(0, extIndex).Trim();
+			else
+				savedFile = root[0].name;
+			
+		}
+		return root;
+	}
+  	public COLLADA exportDAE(List<Transform> transforms)
+  	{
+
+				settings.exportChoice = Settings.ExportChoice.EntireScene;
+				settings.Author = "Remi Arnaud";
+				settings.Comments = "Sample export settings";
+				settings.Copyright = "(c) Remi Arnaud 2015";
+				settings.UnitName = "meter";
+				settings.UnitInMeter = 1.0f;
+
+				settings.copyTextures = false;
+				if (settings.copyTextures)
+					settings.texturesFolder = ".";
+				settings.textureConversionChoice = Settings.TextureConversionChoice.ConvertImagesToPNG;
+				settings.exportCubeMaps = false;
+				settings.exportNormalMaps = true;
+
+				settings.exportLightmaps = false;
+				if (settings.exportLightmaps) {
+					settings.exportLightMapsUV = Settings.ExportLightMapsUV.MultipleUVSetsInGeometry;
+					settings.exportLightMapsOptions = Settings.ExportLightMapsOptions.SaveLightmapAsRGB24;
+					if (settings.exportLightMapsOptions == Settings.ExportLightMapsOptions.SaveLightmapAsRGB24) {
+							// (RGB) = [value]*A*(RGB)
+							settings.lightMapCoeficient = 2.0f;
+					}
+				}
+
+				// Mandatory exportUV with lightmap
+				if (settings.exportLightmaps)
+					settings.exportUVs = Settings.ExportUVs.ExportTwoUVSets;
+				else // change as needed
+					settings.exportUVs = Settings.ExportUVs.ExportFirstUVSet;
+
+        
+				settings.bakeTransformsAsMatrices = true;
+				if (!settings.exportAnimations && !settings.bakeTransformsAsMatrices) {
+					settings.pruneIdentityTransforms = false;// your choice
+				} else
+					// make sure we don't prune identity transforms in that case
+					settings.pruneIdentityTransforms = false;
+
+				settings.exportAnimations = true;
+				if (settings.exportAnimations) {
+					settings .exportSingleClip = false;
+					if (settings.exportSingleClip)
+						settings.singleClipName = "NameOfClip";
+					settings.exportOnlyKeyframes = false;
+					settings.eliminateSingleKeys = true;
+					if (settings .bakeTransformsAsMatrices) {
+						settings.eliminateDuplicateKeys = true;
+						if (settings.eliminateDuplicateKeys) {
+							settings.approxDist = 0.01f;
+							settings.approxAngle = 0.01f;
+							settings.approxScale = 0.01f;
+						}
+					}
+					settings.animationTarget = Settings.AnimationsTarget.MultipleTargetsPerClip;
+				}
+
+				settings.exportSkins = Settings.ExportSkins.ExportSkinsAsControllers;
+				if (settings.exportSkins == Settings.ExportSkins.ExportSkinsAsControllers)
+					settings.exportJoints = Settings.ExportJoints.MarkControllerBonesAsJoints;
+
+				settings.exportMorphs = false;
+				if (settings.exportMorphs) {
+					settings.blendShapeOptions = Settings.BlendShapeOptions.ExportMorphTargets;
+				}
+
+
+				settings.exportTerrain = false;
+				if (settings.exportTerrain) {
+					settings.terrainSampling = 0.25f;
+					settings.terrainTextures = Settings.TerrainTextures.ExportSplatMap;
+					settings.exportTrees = true;
+				}
+
+				// physics options
+				settings.exportColliders = false;
+				settings.exportRigidbodies = false;
+				if (settings.exportRigidbodies)
+					settings.moveRigidbodyTargetToSceneRoot = false;
+
+				settings.splitPrefabsIntoFiles = false;
+				// do not use this option, this will not work with calling ToDAE directly
+				if (settings.splitPrefabsIntoFiles) {
+					settings.prefabsFolder = "prefabs";
+					settings.splitPrefabsOptions = Settings.SplitPrefabsOptions.EportPrefabsOnly;
+					settings.splitPrefabsChangeOptions = Settings.SplitPrefabsChangeOptions.DoNotSplitPrefabsIfLocallyModified;
+				}
+
+				settings.exportCameras = true;
+				settings.exportLights = true;
+				settings.exportTangents = true;
+				if (settings.exportTangents) {
+					settings.tangentOptions = Settings.TangentOptions.IncludeW;
+					settings.exportBinormals = true;
+				}
+
+				settings.fixNamesToValidXML = false;
+				settings.createUUID = false;
+				settings.invertShininess = true;
+
+				// export and return xml
+				return COLLADA_EXPORTER.ToDAE(settings, transforms);
+		}
+}
