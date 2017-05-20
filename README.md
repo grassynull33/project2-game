@@ -38,23 +38,24 @@ To play the game:
 
 What to install and how for local development and testing purposes:
 
-#### For Game:
+### For Game:
 
-For Windows/MacOSX/Linux:
+### For Windows/MacOSX/Linux:
 
-- Minimum Requirements:
-OS: Windows 7 and higher (64 bit only) / Mac OS X 10.5 / Ubuntu Linux, version 10.10 or later
-Processor: AMD Phenom II X2 550, 3.1GHz | Intel Pentium G4400, 3.30GHz
-Memory: 1 GB RAM
-Graphics: Integrated Graphics Card
-DirectX: Version 9+
-Network: Local
-Additional Notes: For Windows 7, service pack 1 is required
+#### Minimum Requirements:
+- OS: Windows 7 and higher (64 bit only) / Mac OS X 10.5 / Ubuntu Linux, version 10.10 or later
+- Processor: AMD Phenom II X2 550, 3.1GHz | Intel Pentium G4400, 3.30GHz
+- Memory: 1 GB RAM
+- Graphics: Integrated Graphics Card
+- DirectX: Version 9+
+- Network: Local
+- Additional Notes: For Windows 7, service pack 1 is required
 
-VR:
-- Minimum Requirements:
-Samsung Gear VR
-All requirements that come with Gear VR (Compatible Devices Only)
+### VR:
+
+#### Minimum Requirements:
+- Samsung Gear VR
+- All requirements that come with Gear VR (Compatible Devices Only)
 
 #### For Web-App:
 Dependencies:
