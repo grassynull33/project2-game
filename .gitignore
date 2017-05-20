@@ -39,7 +39,7 @@ jspm_packages
 .DS_Store
 
 project2-4eb1dfda9ce9.json
-
+unity-93b07-firebase-adminsdk-qly54-4c10ba74db.json
 
 /[Ll]ibrary/
 /[Tt]emp/
@@ -72,6 +72,7 @@ sysinfo.txt
 *.apk
 *.unitypackage
 
+
 #Unique identifier
 
 oculussig_0915f9e3784f2b04
@@ -92,3 +93,5 @@ Library/metadata/
 LightingData.asset
 
 unity-assets/Proj2_Env3_V3/Library/metadata/c6/c60886f37cee6d841955f0f4f6fdfedf
+.env
+

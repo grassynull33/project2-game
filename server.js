@@ -18,12 +18,13 @@ var app = express();
 // override POST to have DELETE and PUT
 app.use(methodOverride('_method'));
 
-// //allow sessions
-// app.use(session({ secret: 'booty Mctootie', cookie: { maxAge: 60000 }, 
-// 	resave: false,
-// 	saveUninitialized: true,
-// }));
-// app.use(cookieParser());
+// allow sessions
+app.use(session({ secret: 'booty Mctootie',
+  cookie: { maxAge: 60000 },
+  resave: false,
+  saveUninitialized: true
+}));
+app.use(cookieParser());
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -34,6 +35,9 @@ app.engine('handlebars', exphbs({
   defaultLayout: 'main'
 }));
 app.set('view engine', 'handlebars');
+
+var isAuth = require('./config/middleware/isAuthenticated');
+var authCheck = require('./config/middleware/attachAuthenticationStatus');
 
 // uncomment after placing your favicon in /public
 // app.use(favicon(__dirname + '/public/favicon.ico'));
