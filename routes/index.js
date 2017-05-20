@@ -15,11 +15,22 @@ var isAuthenticated = require('../config/middleware/isAuthenticated');
 
 var db = require('../models');
 
-var serviceAccount = require('../unity-93b07-firebase-adminsdk-qly54-4c10ba74db.json');
+var serviceAccount = {
+  'type': 'service_account',
+  'project_id': process.env.PROJECT_ID,
+  'private_key_id': process.env.PRIVATE_KEY_ID,
+  'private_key': process.env.PRIVATE_KEY,
+  'client_email': process.env.CLIENT_EMAIL,
+  'client_id': process.env.CLIENT_EMAIL,
+  'auth_uri': 'https://accounts.google.com/o/oauth2/auth',
+  'token_uri': 'https://accounts.google.com/o/oauth2/token',
+  'auth_provider_x509_cert_url': 'https://www.googleapis.com/oauth2/v1/certs',
+  'client_x509_cert_url': process.env.CLIENT_CERT_URL
+};
 
 firebase.initializeApp({
   credential: firebase.credential.cert(serviceAccount),
-  databaseURL: 'https://unity-93b07.firebaseio.com'
+  databaseURL: process.env.DATABASE_URL
 });
 
 router.get('/firebase', function (req, res) {
