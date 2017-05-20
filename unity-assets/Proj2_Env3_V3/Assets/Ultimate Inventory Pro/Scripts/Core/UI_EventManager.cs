@@ -8,6 +8,8 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 
 public class UI_EventManager : MonoBehaviour {
+   public UI_SaveSystem save;
+
     // UI_SaveSystem test = GetComponent<UI_SaveSystem>();
     DependencyStatus dependencyStatus = DependencyStatus.UnavailableOther;
 
@@ -15,6 +17,8 @@ public class UI_EventManager : MonoBehaviour {
     const int kMaxLogSize = 16382;
    void Start()
     {
+            UI_SaveSystem test = GetComponent<UI_SaveSystem>();
+            test.LoadInventory();
         dependencyStatus = FirebaseApp.CheckDependencies();
         if (dependencyStatus != DependencyStatus.Available) {
             FirebaseApp.FixDependenciesAsync().ContinueWith(task => {

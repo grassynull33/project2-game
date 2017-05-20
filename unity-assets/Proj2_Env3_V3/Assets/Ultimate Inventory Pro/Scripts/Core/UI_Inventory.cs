@@ -159,6 +159,7 @@ public class UI_Inventory : MonoBehaviour
                 slotGOHolder.transform.GetChild(i).GetComponent<UI_Slot>().contextMenu = contextMenu;
             }
         }
+
     }
 
     public void ToggleIn()
