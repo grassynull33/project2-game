@@ -854,7 +854,12 @@
 
 #main > section.six h3
 {
-	color: #333;
+	color: #444;
+}
+
+#main > section.seven
+{
+	background-color: #0575E6;
 }
 
 #brand-logo {
