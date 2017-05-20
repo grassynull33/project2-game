@@ -72,4 +72,26 @@ sysinfo.txt
 *.apk
 *.unitypackage
 
+
+#Unique identifier
+
+oculussig_0915f9e3784f2b04
+oculussig_0915f9e3784f2b04.meta
+
+#Specific Asset Exclusion for Github post.buffer (Http) issues.
+
+/Gaia
+/GI
+/Standard Assets/
+*.tga
+/3rd Party Samplers
+/Stamps
+
+*.unity
+/NewEnv
+Library/metadata/
+LightingData.asset
+
+unity-assets/Proj2_Env3_V3/Library/metadata/c6/c60886f37cee6d841955f0f4f6fdfedf
 .env
+
