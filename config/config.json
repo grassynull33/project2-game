@@ -2,7 +2,7 @@
   "development": {
     "username": "bnyy",
     "password": "madewithunity",
-    "database": "test",
+    "database": "equilibrium_db",
     "host": "project2.covpga0ugu4r.us-west-2.rds.amazonaws.com",
     "dialect": "mysql"
   },

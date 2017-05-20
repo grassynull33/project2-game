@@ -4,22 +4,37 @@
 
     <header>
       <h2>Achievements</h2>
+{{!--       <p>Updates Realtime</p> --}}
     </header>
+    
+    <div class="achievement-container">
 
-    <h4 class="achievement-{{hoarder}}">Hoarder</h4>
-    <p>Gather more than 40 items</p>
+      <div class="achievement achievement-{{achievements.hoarder}}">
+        <h4>Hoarder</h4>
+        <p>Gather more than 40 items</p>
+      </div>
 
-    <h4 class="achievement-{{needle}}">Needle in a Haystack</h4>
-    <p>Find the [ name of super rare item ]</p>
+      <div class="achievement achievement-{{achievements.needle}}">
+        <h4>Needle in a Haystack</h4>
+        <p>Find the Cha-Ching wand</p>
+      </div>
 
-    <h4 class="achievement-{{quantity}}">Quantity Overload</h4>
-    <p>Pick up more than [ 1 ] of the same item</p>
+      <div class="achievement achievement-{{achievements.quantity}}">
+        <h4>Quantity Overload</h4>
+        <p>Pick up more than 1 of the same item</p>
+      </div>
 
-    <h4 class="achievement-{{collection}}">[ pun about a related collection of items ]</h4>
-    <p>Collect [ a baseball, bat, and catcher’s mitt ]</p>
+      <div class="achievement achievement-{{achievements.collection}}">
+        <h4>4 Wands to Rule Them All</h4>
+        <p>Collect 4 of the most special wands</p>
+      </div>
 
-    <h4 class="achievement-{{ultimate}}">Ultimate Collector</h4>
-    <p>Get every single item in the game</p>
+      <div class="achievement achievement-{{achievements.ultimate}}">
+        <h4>Ultimate Collector</h4>
+        <p>Get every single item in the game</p>
+      </div>
 
+    </div>
+   
   </div>
 </section>

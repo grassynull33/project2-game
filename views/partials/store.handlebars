@@ -1,0 +1,25 @@
+<!-- Store -->
+<section id="store">
+  <div class="container">
+
+    <header>
+      <h2>Store</h2>
+    </header>
+    
+    <div class="store-container container">
+      <div id="cannot-buy" class="alert alert-danger"></div>
+      <div class="row">
+         {{#each storeItems}}
+         <div class="store-item col-md-4">
+           <img class="store-img" src="{{this.imageRef}}" alt="store item image">
+           <h4 class="store-name">{{this.name}}</h4>
+           <p class="store-desc">{{this.description}}</p>
+           <button class="button buyBtn" data-item="{{this.name}}" data-price="{{this.price}}">Buy Now</button>
+           <p class="store-price">{{this.price}} Credits</p>
+         </div>
+        {{/each}}
+      </div>
+     </div>
+
+  </div>
+</section>

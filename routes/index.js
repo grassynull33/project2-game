@@ -3,9 +3,12 @@ var express = require('express');
 var router = express.Router();
 var minigameController = require('../controllers/minigameController');
 var achievementController = require('../controllers/achievementController');
+var wikiController = require('../controllers/wikiController');
 var userController = require('../controllers/userController');
 var itemController = require('../controllers/itemController');
+var storeItemController = require('../controllers/storeItemController');
 var guestbookController = require('../controllers/guestbookController');
+var gravatar = require('gravatar');
 
 var passport = require('../config/passport');
 var isAuthenticated = require('../config/middleware/isAuthenticated');
@@ -48,11 +51,19 @@ router.get('/firebase', function (req, res) {
 });
 
 router.get('/',
-  minigameController.checkMinigame,
-  achievementController.checkAchievements,
   itemController.checkItemsList,
-  guestbookController.checkGuestBook
+  minigameController.checkMinigame,
+  wikiController.checkWiki,
+  achievementController.checkAchievements,
+  storeItemController.checkStoreItems
+  // ,
+  // guestbookController.checkGuestBook
 );
+
+router.get('/users/signout', function (req, res) {
+  req.logout();
+  res.redirect('/');
+});
 
 router.get('/users/signup', function (req, res) {
   res.render('registration', {
@@ -74,7 +85,8 @@ router.post('/users/signup', function (req, res) {
       db.User.create({
         username: req.body.username,
         email: req.body.email,
-        password: req.body.password
+        password: req.body.password,
+        credits: 200
       }).then(function () {
         // res.send({redirect: '/'});
         res.redirect(307, '/users/login');
@@ -92,9 +104,9 @@ router.post('/api/feedback/', function (req, res) {
     name: req.body.name,
     feedback: req.body.feedback,
     username: req.body.username
-  }).then(function() {
+  }).then(function () {
     res.redirect('/');
-  }).catch(function(err) {
+  }).catch(function (err) {
     res.json(err);
   });
 });
@@ -125,10 +137,14 @@ router.get('/api/user_data', function (req, res) {
   } else {
     // Otherwise send back the user's email and id
     // Sending back a password, even a hashed password, isn't a good idea
+    var url = gravatar.url(req.user.email, {s: '200', r: 'r', d: 'mm'});
+
     res.json({
       email: req.user.email,
       id: req.user.id,
-      username: req.user.username
+      username: req.user.username,
+      gravatar: url,
+      credits: req.user.credits
     });
   }
 });
