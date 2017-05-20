@@ -58,3 +58,7 @@ var scene, camera, renderer;
 
     }
 });
+
+$("#mapUnload").click(function () {
+location.reload(); // Should send you back to Map before you opened Modal to continue your journey :)
+});
