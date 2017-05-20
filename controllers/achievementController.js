@@ -35,10 +35,6 @@ exports.checkAchievements = function (req, res, next) {
   }
 
   for (var i = 0; i < results.length; i++) {
-    if (collectionItems.indexOf(results[i].name) === -1 && achievements.collection === true) {
-      achievements.collection = false;
-    }
-
     // quantity overload
     if (results[i].greaterThanOne === true && achievements.quantity === false) {
       achievements.quantity = true;
@@ -55,10 +51,19 @@ exports.checkAchievements = function (req, res, next) {
     achievements.hoarder = true;
   }
 
+  // collection of items
+  for (var i = 0; i < collectionItems.length; i++) {
+    if (resultsItems.indexOf(collectionItems[i]) === -1) {
+      achievements.collection = false;
+      break;
+    }
+  }
+
   // ultimate collector
   for (var i = 0; i < allItems.length; i++) {
     if (resultsItems.indexOf(allItems[i]) === -1) {
       achievements.ultimate = false;
+      break;
     }
   }
 
