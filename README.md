@@ -6,7 +6,6 @@ A Web-based first person virtual reality adventure game with real-time database 
 Include a one or two screenshots of main UI/UX points of your app and how it solves a problem
 
 ## Technologies Used
-You can give a brief listing of the technologies you've learned and applied here
 - Unity
 - MySQL
 - Sequelize
