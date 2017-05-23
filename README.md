@@ -62,11 +62,11 @@ Equilibrium is a first person virtual reality adventure game with real-time data
 ![Low_Poly_FPS_View Night](http://i.imgur.com/EkWoQ0n.jpg)
 ![Low_Poly_Overview](http://i.imgur.com/So6O0lx.jpg)
 
+### HD Version (Game):
 ![HD_FPS_View Morning](http://i.imgur.com/Pa3a9JJ.jpg)
 ![HD_FPS_View Night](http://i.imgur.com/YEb7XlL.png)
 ![HD_Overview](http://i.imgur.com/tMCvPCX.jpg)
 
-![](http://i.imgur.com/N170leM.gif)
 ## Technologies Used
 ### Core Game:
 - Unity
