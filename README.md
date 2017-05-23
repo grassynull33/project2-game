@@ -2,6 +2,49 @@
 
 Equilibrium is a first person virtual reality adventure game with real-time database connection and a companion web app. Our Firebase connection is integrated with a MySQL database and Sequelize, an object relational mapper for MySQL. The functionality of the web app works closely with encrypted C# data.
 
+## Getting Started
+### How to Use the Web App:
+- Live link to companion web app: https://equilibrium-game.herokuapp.com/
+- The web app has many dynamic features that add to the gameplay experience such as a history log of all items picked up, a WebGL map of the in-game environment, an achievements module, and a wiki of all possible items. It's also got more experimental (in-progress) features such as a slot minigame and a virtual store. Please check it out and give us feedback in the guestbook!
+
+### Prerequisities for Web App:
+#### Dependencies
+- bcrypt-nodejs
+- body-parser
+- cookie-parser
+- express
+- express-handlebars
+- express-session
+- firebase
+- firebase-admin
+- gravatar
+- method-override
+- morgan
+- mysql
+- nodemon
+- passport
+- passport-local
+- sequelize
+- sequelize-cli
+
+### How to Play the Game:
+- WASD-Standard controls for Windows/Mac/Linux platforms and press E for interacting with objects. Tab for toggling inventory view.
+- VR Only: Look down at a 30-degree angle to move forward. Look up at a 30-degree angle to stop movement. Operate controls with either Samsung Gear VR’s headset control-pad, ‘tap’, to interact with object. Press bluetooth controller to pick up item.
+
+### Prerequisities for Game:
+#### For Windows/Mac OS X/Linux (Minimum Requirements)
+- OS: Windows 7 and higher (64 bit only) / Mac OS X 10.5 / Ubuntu Linux, version 10.10 or later
+- Processor: AMD Phenom II X2 550, 3.1GHz | Intel Pentium G4400, 3.30GHz
+- Memory: 1 GB RAM
+- Graphics: Integrated Graphics Card
+- DirectX: Version 9+
+- Network: Local
+- Additional Notes: For Windows 7, service pack 1 is required
+
+#### VR (Minimum Requirements)
+- Samsung Gear VR
+- All requirements that come with Gear VR (Compatible Devices Only)
+
 ## Screenshots
 ### Map of Game Environment (Web App):
 ![screenshot 2017-05-23 13 25 23](https://cloud.githubusercontent.com/assets/21274043/26374795/636b01ba-3fbb-11e7-9c74-694d09adad49.png)
@@ -33,49 +76,6 @@ Equilibrium is a first person virtual reality adventure game with real-time data
 - Handblebars
 - Three.js
 - Collada
-
-## Getting Started
-### How to Play the Game:
-- WASD-Standard controls for Windows/Mac/Linux platforms and press E for interacting with objects. Tab for toggling inventory view.
-- VR Only: Look down at a 30-degree angle to move forward. Look up at a 30-degree angle to stop movement. Operate controls with either Samsung Gear VR’s headset control-pad, ‘tap’, to interact with object. Press bluetooth controller to pick up item.
-
-### Prerequisities for Game:
-#### For Windows/Mac OS X/Linux (Minimum Requirements)
-- OS: Windows 7 and higher (64 bit only) / Mac OS X 10.5 / Ubuntu Linux, version 10.10 or later
-- Processor: AMD Phenom II X2 550, 3.1GHz | Intel Pentium G4400, 3.30GHz
-- Memory: 1 GB RAM
-- Graphics: Integrated Graphics Card
-- DirectX: Version 9+
-- Network: Local
-- Additional Notes: For Windows 7, service pack 1 is required
-
-#### VR (Minimum Requirements)
-- Samsung Gear VR
-- All requirements that come with Gear VR (Compatible Devices Only)
-
-### How to Use the Web App:
-- Live link to companion web app: https://equilibrium-game.herokuapp.com/
-- The web app has many dynamic features that add to the gameplay experience such as a history log of all items picked up, a WebGL map of the in-game environment, an achievements module, and a wiki of all possible items. It's also got more experimental (in-progress) features such as a slot minigame and a virtual store. Please check it out and give us feedback in the guestbook!
-
-### Prerequisities for Web App:
-#### Dependencies
-- bcrypt-nodejs
-- body-parser
-- cookie-parser
-- express
-- express-handlebars
-- express-session
-- firebase
-- firebase-admin
-- gravatar
-- method-override
-- morgan
-- mysql
-- nodemon
-- passport
-- passport-local
-- sequelize
-- sequelize-cli
 
 ## Code Walkthroughs
 
