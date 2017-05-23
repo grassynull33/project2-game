@@ -3,42 +3,46 @@
 A Web-based first person virtual reality adventure game with real-time database connection and associated web page application. Firebase connection integrated with MySQL database and Sequelize, Object Relational Mapping. Website application functionality works closely with encrypted C# data.
 
 ## Screenshots
-### Map of Game Environment (Web App)
+### Map of Game Environment (Web App):
 ![screenshot 2017-05-23 13 07 38](https://cloud.githubusercontent.com/assets/21274043/26374204/564bf3c4-3fb9-11e7-92ce-10bba5f94fdb.png)
 
-### Achievements (Web App)
+### Achievements (Web App):
 ![screenshot 2017-05-23 13 12 29](https://cloud.githubusercontent.com/assets/21274043/26374283/95a2f220-3fb9-11e7-8c26-c837ed7458da.png)
 
 ## Technologies Used
+### Core Game:
 - Unity
-- MySQL
-- Sequelize
-- HTML5/CSS3
-- Bootstrap
-- JavaScript
-- jQuery
-- Node.js
-- Express
-- Handblebars
-- Three.js
-- Collada
 - C#
-- Firebase (SDK)
 - Android (SDK)
 - Oculus (SDK)
 - Samsung Gear VR
 - AR
 
+### Databases:
+- MySQL
+- Sequelize
+- Firebase (SDK)
+
+### Web App:
+- HTML5/CSS3
+- JavaScript
+- jQuery
+- Bootstrap
+- Node.js
+- Express
+- Handblebars
+- Three.js
+- Collada
+
 ## Getting Started
 Go to this link to start the web application: https://equilibrium-game.herokuapp.com/
 
-### To Play the Game
+### How to Play the Game:
 - WASD-Standard controls for Windows/Mac/Linux platforms and press E for interacting with objects. Tab for toggling inventory view.
 - VR Only: Look down at a 30-degree angle to move forward. Look up at a 30-degree angle to stop movement. Operate controls with either Samsung Gear VR’s headset control-pad, ‘tap’, to interact with object. Press bluetooth controller to pick up item.
 
-### Prerequisities
-#### For Game
-##### For Windows/Mac OS X/Linux (Minimum Requirements)
+### Prerequisities for Game:
+#### For Windows/Mac OS X/Linux (Minimum Requirements)
 - OS: Windows 7 and higher (64 bit only) / Mac OS X 10.5 / Ubuntu Linux, version 10.10 or later
 - Processor: AMD Phenom II X2 550, 3.1GHz | Intel Pentium G4400, 3.30GHz
 - Memory: 1 GB RAM
@@ -47,12 +51,12 @@ Go to this link to start the web application: https://equilibrium-game.herokuapp
 - Network: Local
 - Additional Notes: For Windows 7, service pack 1 is required
 
-##### VR (Minimum Requirements)
+#### VR (Minimum Requirements)
 - Samsung Gear VR
 - All requirements that come with Gear VR (Compatible Devices Only)
 
-#### For Web App
-##### Dependencies
+### Prerequisities for Web App:
+#### Dependencies
 - bcrypt-nodejs
 - body-parser
 - cookie-parser
