@@ -785,7 +785,7 @@
 			#main > section.three
 			{
 				background-color: #ecf1f1;
-				background-image: url('../images/forest04.jpg');
+				background-image: linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4) ), url('../images/forest04.jpg');
 				/*background-size: cover;*/
 
 
