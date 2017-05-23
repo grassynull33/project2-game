@@ -3,7 +3,8 @@
 A Web-based first person virtual reality adventure game with real-time database connection and associated web page application. Firebase connection integrated with MySQL database and Sequelize, Object Relational Mapping. Website application functionality works closely with encrypted C# data.
 
 ## Screenshots
-Include a one or two screenshots of main UI/UX points of your app and how it solves a problem
+### Map of Game Environment
+![screenshot 2017-05-23 13 07 38](https://cloud.githubusercontent.com/assets/21274043/26374065/d9a9bc5c-3fb8-11e7-978d-31c75b5d80a4.png)
 
 ## Technologies Used
 - Unity
@@ -26,7 +27,6 @@ Include a one or two screenshots of main UI/UX points of your app and how it sol
 - AR
 
 ## Getting Started
-
 Go to this link to start the web application: https://equilibrium-game.herokuapp.com/
 
 ### To Play the Game
@@ -34,10 +34,8 @@ Go to this link to start the web application: https://equilibrium-game.herokuapp
 - VR Only: Look down at a 30-degree angle to move forward. Look up at a 30-degree angle to stop movement. Operate controls with either Samsung Gear VR’s headset control-pad, ‘tap’, to interact with object. Press bluetooth controller to pick up item.
 
 ### Prerequisities
-
-### For Game
-
-#### For Windows/Mac OS X/Linux (Minimum Requirements)
+#### For Game
+##### For Windows/Mac OS X/Linux (Minimum Requirements)
 - OS: Windows 7 and higher (64 bit only) / Mac OS X 10.5 / Ubuntu Linux, version 10.10 or later
 - Processor: AMD Phenom II X2 550, 3.1GHz | Intel Pentium G4400, 3.30GHz
 - Memory: 1 GB RAM
@@ -46,13 +44,12 @@ Go to this link to start the web application: https://equilibrium-game.herokuapp
 - Network: Local
 - Additional Notes: For Windows 7, service pack 1 is required
 
-#### VR (Minimum Requirements)
+##### VR (Minimum Requirements)
 - Samsung Gear VR
 - All requirements that come with Gear VR (Compatible Devices Only)
 
-### For Web App
-
-#### Web App Dependencies
+#### For Web App
+##### Dependencies
 - bcrypt-nodejs
 - body-parser
 - cookie-parser
@@ -71,12 +68,7 @@ Go to this link to start the web application: https://equilibrium-game.herokuapp
 - sequelize
 - sequelize-cli
 
-## Built With
-
-* Unity
-
 ## Code Walkthroughs
-
 For Project presentation, you can include snippets of code you found buggy, interesting, or are overall proud of here.  Try to limit the quantity and size to quick readable bits.
 
 You can also show where you've used technologies you've learned and applied here.
@@ -90,7 +82,6 @@ function awesomeThing() {
 ```
 
 ## Team BNYY (Contributors)
-
 See the list of [contributors](https://github.com/yoonslee/project2-game/contributors) who participated in this project.
 
 * **Brandon Chang** - https://github.com/karunashi
@@ -99,10 +90,8 @@ See the list of [contributors](https://github.com/yoonslee/project2-game/contrib
 * **Yen La** - https://github.com/yenla
 
 ## License
-
 This project is licensed under the MIT License - see the [LICENSE.md](https://github.com/yoonslee/project2-game/blob/master/LICENSE) file for details.
 
 ## Acknowledgments
-
 * Shout out to our mentor and instructor, **Omar Patel** - https://github.com/osp123
 * Inspired by the latest and greatest bleeding edge technologies
