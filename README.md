@@ -35,8 +35,6 @@ A Web-based first person virtual reality adventure game with real-time database 
 - Collada
 
 ## Getting Started
-Live link to companion web app: https://equilibrium-game.herokuapp.com/
-
 ### How to Play the Game:
 - WASD-Standard controls for Windows/Mac/Linux platforms and press E for interacting with objects. Tab for toggling inventory view.
 - VR Only: Look down at a 30-degree angle to move forward. Look up at a 30-degree angle to stop movement. Operate controls with either Samsung Gear VR’s headset control-pad, ‘tap’, to interact with object. Press bluetooth controller to pick up item.
@@ -54,6 +52,10 @@ Live link to companion web app: https://equilibrium-game.herokuapp.com/
 #### VR (Minimum Requirements)
 - Samsung Gear VR
 - All requirements that come with Gear VR (Compatible Devices Only)
+
+### How to Use the Web App:
+- Live link to companion web app: https://equilibrium-game.herokuapp.com/
+- The web app has many dynamic features that add to the gameplay experience such as a history log of all items picked up, a WebGL map of the in-game environment, an achievements module, a wiki of all possible items. It's also got more experimental (in-progress) features such as a slot minigame and a virtual store. Please check it out and give us feedback in the guestbook!
 
 ### Prerequisities for Web App:
 #### Dependencies
