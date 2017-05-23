@@ -4,7 +4,7 @@ A Web-based first person virtual reality adventure game with real-time database 
 
 ## Screenshots
 ### Map of Game Environment (Web App):
-![screenshot 2017-05-23 13 07 38](https://cloud.githubusercontent.com/assets/21274043/26374204/564bf3c4-3fb9-11e7-92ce-10bba5f94fdb.png)
+![screenshot 2017-05-23 13 25 23](https://cloud.githubusercontent.com/assets/21274043/26374795/636b01ba-3fbb-11e7-9c74-694d09adad49.png)
 
 ### Achievements (Web App):
 ![screenshot 2017-05-23 13 12 29](https://cloud.githubusercontent.com/assets/21274043/26374283/95a2f220-3fb9-11e7-8c26-c837ed7458da.png)
@@ -35,7 +35,7 @@ A Web-based first person virtual reality adventure game with real-time database 
 - Collada
 
 ## Getting Started
-Go to this link to start the web application: https://equilibrium-game.herokuapp.com/
+Live link to companion web app: https://equilibrium-game.herokuapp.com/
 
 ### How to Play the Game:
 - WASD-Standard controls for Windows/Mac/Linux platforms and press E for interacting with objects. Tab for toggling inventory view.
