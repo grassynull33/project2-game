@@ -27,17 +27,15 @@ Include a one or two screenshots of main UI/UX points of your app and how it sol
 
 ## Getting Started
 
-Go to this link to start the web application https://equilibrium-game.herokuapp.com/  
+Go to this link to start the web application: https://equilibrium-game.herokuapp.com/
 
-To play the game:
+### To Play the Game
 - WASD-Standard controls for Windows/Mac/Linux platforms and press E for interacting with objects. Tab for toggling inventory view.
-- VR Only: Look down at a 30-degree angle to move forward. Look up at a 30-degree angle to stop movement. Operate controls with either Samsung Gear VR’s headset control-pad, ‘tap,’ to interact with object. Press bluetooth controller to pick up item.
+- VR Only: Look down at a 30-degree angle to move forward. Look up at a 30-degree angle to stop movement. Operate controls with either Samsung Gear VR’s headset control-pad, ‘tap’, to interact with object. Press bluetooth controller to pick up item.
 
 ### Prerequisities
 
-What to install and how for local development and testing purposes:
-
-### For Game:
+### For Game
 
 #### For Windows/Mac OS X/Linux (Minimum Requirements)
 - OS: Windows 7 and higher (64 bit only) / Mac OS X 10.5 / Ubuntu Linux, version 10.10 or later
@@ -51,6 +49,8 @@ What to install and how for local development and testing purposes:
 #### VR (Minimum Requirements)
 - Samsung Gear VR
 - All requirements that come with Gear VR (Compatible Devices Only)
+
+### For Web App
 
 #### Web App Dependencies
 - bcrypt-nodejs
@@ -73,11 +73,10 @@ What to install and how for local development and testing purposes:
 
 ## Built With
 
-* Unity Game Engine
-* Item 2
-* Item 3
+* Unity
 
 ## Code Walkthroughs
+
 For Project presentation, you can include snippets of code you found buggy, interesting, or are overall proud of here.  Try to limit the quantity and size to quick readable bits.
 
 You can also show where you've used technologies you've learned and applied here.
@@ -90,20 +89,20 @@ function awesomeThing() {
 }
 ```
 
-## Authors
+## Team BNYY (Contributors)
 
-* **Brandon Chang** - [https://github.com/karunashi]
-* **Yoon Lee** - [https://github.com/yoonslee]
-* **Yen La** - [https://github.com/yenla]
-* **Nathan Miller** - [https://github.com/nathanmiller9]
+See the list of [contributors](https://github.com/yoonslee/project2-game/contributors) who participated in this project.
 
-See also the list of [contributors](https://github.com/yoonslee/project2-game/contributors) who participated in this project.
+* **Brandon Chang** - https://github.com/karunashi
+* **Nathan Miller** - https://github.com/nathanmiller9
+* **Yoon Lee** - https://github.com/yoonslee
+* **Yen La** - https://github.com/yenla
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
+This project is licensed under the MIT License - see the [LICENSE.md](https://github.com/yoonslee/project2-game/blob/master/LICENSE) file for details.
 
 ## Acknowledgments
 
-* Shout out to our instructor, **Omar Patel** - [https://github.com/osp123]
+* Shout out to our mentor and instructor, **Omar Patel** - https://github.com/osp123
 * Inspired by the latest and greatest bleeding edge technologies
