@@ -57,6 +57,7 @@ Equilibrium is a first person virtual reality adventure game with real-time data
 ### Achievements (Web App):
 ![screenshot 2017-05-23 13 12 29](https://cloud.githubusercontent.com/assets/21274043/26374283/95a2f220-3fb9-11e7-8c26-c837ed7458da.png)
 
+![GIF of Prototype Version 1.0](http://i.imgur.com/N170leM.gifv)
 ## Technologies Used
 ### Core Game:
 - Unity
