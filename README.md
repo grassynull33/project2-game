@@ -50,12 +50,6 @@ Equilibrium is a first person virtual reality adventure game with real-time data
 - sequelize-cli
 
 ## Screenshots
-### Map of Game Environment (Web App):
-![screenshot 2017-05-23 13 25 23](https://cloud.githubusercontent.com/assets/21274043/26374795/636b01ba-3fbb-11e7-9c74-694d09adad49.png)
-
-### Achievements (Web App):
-![screenshot 2017-05-23 13 12 29](https://cloud.githubusercontent.com/assets/21274043/26374283/95a2f220-3fb9-11e7-8c26-c837ed7458da.png)
-
 ### Low Polycount Version (Game):
 ![Low_Poly_FPS_View Morning](http://i.imgur.com/lETL9z5.jpg)
 ![Low_Poly_FPS_View Night](http://i.imgur.com/EkWoQ0n.jpg)
@@ -65,6 +59,12 @@ Equilibrium is a first person virtual reality adventure game with real-time data
 ![HD_FPS_View Morning](http://i.imgur.com/Pa3a9JJ.jpg)
 ![HD_FPS_View Night](http://i.imgur.com/YEb7XlL.png)
 ![HD_Overview](http://i.imgur.com/tMCvPCX.jpg)
+
+### Map of Game Environment (Web App):
+![screenshot 2017-05-23 13 25 23](https://cloud.githubusercontent.com/assets/21274043/26374795/636b01ba-3fbb-11e7-9c74-694d09adad49.png)
+
+### Achievements (Web App):
+![screenshot 2017-05-23 13 12 29](https://cloud.githubusercontent.com/assets/21274043/26374283/95a2f220-3fb9-11e7-8c26-c837ed7458da.png)
 
 ## Technologies Used
 ### Core Game:
