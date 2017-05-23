@@ -106,6 +106,72 @@ router.get('/',
 );
 ```
 
+### Game Real-Time Firebase Updates:
+For the preliminary building stage of our game, we wanted to make sure we could get information from the game to Firebase in real-time or close to it. Getting Firebase SDK to update with organized data objects took a lot of tinkering, and eventually we scrapped .Push() method for Firebase, which was our initial method to get information from the game. Thanks to the Transaction class and list used to create objects in unique nodes, we were able to organize big chunks of relevent data that auto-sorts based on the time the data was created (when an interaction happens in game with a GameObject). 
+
+```
+    TransactionResult InventoryUpdate(MutableData mutableData) {
+        List<object> inventory = mutableData.Value as List<object>;
+        Dictionary<string, object> inventorySetup = new Dictionary<string, object>();
+        inventory.Add(inventorySetup);
+        mutableData.Value = inventory;
+    return TransactionResult.Success(mutableData);
+  }
+
+    public void PickupItemEvent(GameObject item, int slotID, bool wasStacked, string desc, string name, bool hasDurability, bool isCraftable, bool isBlueprint, int itemID) //This event will be triggered when you pick up an item.
+    {
+    	DatabaseReference reference = FirebaseDatabase.DefaultInstance.GetReference("Inventory");
+
+    	reference.RunTransaction(mutableData => {
+            List<object> inventory = mutableData.Value as List<object>;
+
+            if (inventory == null)
+            {
+                inventory = new List<object>();
+            }
+
+            Dictionary<string, object> itemData =
+                             new Dictionary<string, object>();
+            itemData["Item ID"] = itemID;
+            itemData["ItemName"] = name;
+            itemData["Description"] = desc;
+            itemData["SlotID"] = slotID;
+            itemData["GreaterThanOne"] = wasStacked;
+            itemData["HasDurability"] = hasDurability;
+            itemData["IsCraftable"] = isCraftable;
+            itemData["IsBlueprint"] = isBlueprint;
+            inventory.Add(itemData);
+            mutableData.Value = inventory;
+            return TransactionResult.Success(mutableData);
+        });
+```
+
+### Game VR-Controls:
+Using only Unity Engine and System Collections dependencies, used the input keys of a mouse(0) keycode, that has been overhauled into the inventory management system in scripts to emulate the 'tap' functionality on VR's headset controls on the side for the particular peripheral we used (Samsung Gear VR), while also having it track the angle of the device to control the movement within the open-world game. Can also be controlled via WASD, or the arrow keys in their respective platforms.
+
+```
+using UnityEngine;
+using System.Collections;
+
+public class ExampleClass : MonoBehaviour {
+    void Update() {
+        if (Input.GetMouseButton(0))
+    }
+}
+...
+	void Update () {
+        if (vrCamera.eulerAngles.x >= toggleAngle && vrCamera.eulerAngles.x < 90.0f) {
+            // Move forward
+            moveForward = true;
+        }
+        else {
+            // Stop moving
+            moveForward = false;
+        }
+
+```
+
+
 ## Team BNYY (Contributors)
 See the list of [contributors](https://github.com/yoonslee/project2-game/contributors) who participated in this project.
 
