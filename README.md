@@ -1,6 +1,6 @@
 ![equili-logo-black-bg](https://cloud.githubusercontent.com/assets/21274043/26372159/c7258f18-3fb1-11e7-902d-1b713b9524ca.png)
 
-A Web-based first person virtual reality adventure game with real-time database connection and associated web page application. Firebase connection integrated with MySQL database and Sequelize, Object Relational Mapping. Website application functionality works closely with encrypted C# data.
+Equilibrium is a first person virtual reality adventure game with real-time database connection and a companion web app. Our Firebase connection is integrated with a MySQL database and Sequelize, an object relational mapper for MySQL. The functionality of the web app works closely with encrypted C# data.
 
 ## Screenshots
 ### Map of Game Environment (Web App):
@@ -55,7 +55,7 @@ A Web-based first person virtual reality adventure game with real-time database 
 
 ### How to Use the Web App:
 - Live link to companion web app: https://equilibrium-game.herokuapp.com/
-- The web app has many dynamic features that add to the gameplay experience such as a history log of all items picked up, a WebGL map of the in-game environment, an achievements module, a wiki of all possible items. It's also got more experimental (in-progress) features such as a slot minigame and a virtual store. Please check it out and give us feedback in the guestbook!
+- The web app has many dynamic features that add to the gameplay experience such as a history log of all items picked up, a WebGL map of the in-game environment, an achievements module, and a wiki of all possible items. It's also got more experimental (in-progress) features such as a slot minigame and a virtual store. Please check it out and give us feedback in the guestbook!
 
 ### Prerequisities for Web App:
 #### Dependencies
@@ -78,16 +78,18 @@ A Web-based first person virtual reality adventure game with real-time database 
 - sequelize-cli
 
 ## Code Walkthroughs
-For Project presentation, you can include snippets of code you found buggy, interesting, or are overall proud of here.  Try to limit the quantity and size to quick readable bits.
 
-You can also show where you've used technologies you've learned and applied here.
+### Model-View-Controller:
+Separating our code into modules made our code much more readable and easy to work with. Although there is some initial investment in planning, the payoff of isolating chunks of code was significant as we can identify errors and, often times, re-use code almost effortlessly.
 
 ```
-function awesomeThing() {
-    //...
-    // try not to make it too long otherwise, point to filepaths:line numbers
-    //...
-}
+router.get('/',
+  itemController.checkItemsList,
+  minigameController.checkMinigame,
+  wikiController.checkWiki,
+  achievementController.checkAchievements,
+  storeItemController.checkStoreItems
+);
 ```
 
 ## Team BNYY (Contributors)
