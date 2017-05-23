@@ -6,6 +6,11 @@ Equilibrium is a first person virtual reality adventure game with real-time data
 ### How to Use the Web App:
 - Live link to companion web app: https://equilibrium-game.herokuapp.com/
 - The web app has many dynamic features that add to the gameplay experience such as a history log of all items picked up, a WebGL map of the in-game environment, an achievements module, and a wiki of all possible items. It's also got more experimental (in-progress) features such as a slot minigame and a virtual store. Please check it out and give us feedback in the guestbook!
+- Live link to Linux (64-bit and 32-bit compatible): https://www.dropbox.com/s/xlbz6arn80uynjf/Linux%2864%2632%29.zip?dl=1
+- Live link to Windows (64-bit and 32-bit compatible): https://www.dropbox.com/s/kmpiiteu02jaqq9/Windows%2864%2632%29.zip?dl=1
+- MacOSX Build in early alpha, .dmg file currently not available.
+- Android Build in early beta, requires Crossplatform D-Pad control integration but functional.
+- VR Build, requires Gear VR compatible Android devices, and also requires headset (2016 Edition and above recommended): https://www.dropbox.com/s/5zwek3mrghj8k8u/Equilibrium_Beta7.apk?dl=1
 
 ### Prerequisities for Web App:
 #### Dependencies
